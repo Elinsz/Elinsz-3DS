@@ -159,10 +159,10 @@ unless file_loaded?(__FILE__)
 
   #Botão interativo - Elinsz 3DS
   elinsz3ds_cmd = UI::Command.new("Elinsz 3DS") { editordlg = ELINSZ3DS::Elinsz3ds.new unless editordlg }
-  elinsz_cmd.small_icon = "img/elinsz-2.svg"
-  elinsz_cmd.large_icon = "img/elinsz-2.svg"
-  elinsz_cmd.tooltip = "Menu Principal"
-  elinsz_cmd.status_bar_text = "Projeto paramétrico para sistemas Modulares"
+  elinsz3ds_cmd.small_icon = "img/elinsz-2.svg"
+  elinsz3ds_cmd.large_icon = "img/elinsz-2.svg"
+  elinsz3ds_cmd.tooltip = "Menu Principal"
+  elinsz3ds_cmd.status_bar_text = "Projeto paramétrico para sistemas Modulares"
   as_rce_tb.add_item elinsz3ds_cmd
 
   # Adicionar separador
