@@ -1,0 +1,31 @@
+name: Sync UI to Docs
+
+on:
+  push:
+    branches:
+      - Elinsz
+
+jobs:
+  sync-ui:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v3
+
+      - name: Configurar Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.1'
+
+      - name: Rodar script de sincronização
+        run: |
+          ruby sync_ui_to_docs.rb
+
+      - name: Commit e push das alterações
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add docs/ui
+          git commit -m "Sync UI to docs via GitHub Actions" || echo "Nada para commitar"
+          git push
