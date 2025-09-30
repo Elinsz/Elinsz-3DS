@@ -9,7 +9,7 @@
 
 require 'sketchup.rb'
 require 'fileutils'
-require_relative 'ActivationDialog'  # Adiciona o require da ActivationDialog.rb
+#require_relative 'ActivationDialog'  # Adiciona o require da ActivationDialog.rb
 
 
 ## =====================
@@ -140,7 +140,7 @@ unless file_loaded?(__FILE__)
   # Add main menu items
   sub = UI.menu("Window").add_submenu("Elinsz 3DS")
   sub.add_item("Menu Principal") { editordlg = ELINSZ3DS::Elinsz3ds.new }
-  sub.add_item("OpComponentes") { editordlg = EIS_OpComponentes::OpComponentes.new }
+  # sub.add_item("OpComponentes") { editordlg = EIS_OpComponentes::OpComponentes.new }
 
   ## Add menu items
   # Criar toolbar
@@ -155,15 +155,15 @@ unless file_loaded?(__FILE__)
   as_rce_tb.add_item logo_cmd
 
   # Adicionar separador
-  #as_rce_tb.add_separator
+  as_rce_tb.add_separator
 
-  # Botão interativo - Elinsz 3D
-  # elinsz_cmd = UI::Command.new("Elinsz 3D") { editordlg = EIS_Elinsz::Elinsz.new unless editordlg }
-  # elinsz_cmd.small_icon = "img/elinsz-2.svg"
-  # elinsz_cmd.large_icon = "img/elinsz-2.svg"
-  # elinsz_cmd.tooltip = "Menu Principal"
-  # elinsz_cmd.status_bar_text = "Projeto paramétrico para sistemas Modulares"
-  # as_rce_tb.add_item elinsz_cmd
+  Botão interativo - Elinsz 3DS
+  elinsz_cmd = UI::Command.new("Elinsz 3DS") { editordlg = ELINSZ3DS::Elinsz3ds.new unless editordlg }
+  elinsz_cmd.small_icon = "img/elinsz-2.svg"
+  elinsz_cmd.large_icon = "img/elinsz-2.svg"
+  elinsz_cmd.tooltip = "Menu Principal"
+  elinsz_cmd.status_bar_text = "Projeto paramétrico para sistemas Modulares"
+  as_rce_tb.add_item elinsz3ds_cmd
 
   # Adicionar separador
   # as_rce_tb.add_separator
@@ -189,21 +189,21 @@ unless file_loaded?(__FILE__)
 
 
   # Exibir toolbar
-  as_rce_tb.show
+  # as_rce_tb.show
 
-    # Add main menu items
-    # Criar toolbar
-    as_rce_tb = UI::Toolbar.new "New toolbars-Elinsz 3DS"
-    # sub = UI.menu("Window").add_submenu("Elinsz 3D")
+  #   # Add main menu items
+  #   # Criar toolbar
+  #   as_rce_tb = UI::Toolbar.new "New toolbars-Elinsz 3DS"
+  #   # sub = UI.menu("Window").add_submenu("Elinsz 3D")
 
 
-    # Botão interativo - OpComponentes
-    opComponentes_cmd = UI::Command.new("OpComponentes") { editordlg = EIS_OpComponentes::OpComponentes.new unless editordlg }
-    opComponentes_cmd.small_icon = "img/OpComponente.svg"
-    opComponentes_cmd.large_icon = "img/OpComponente.svg"
-    opComponentes_cmd.tooltip = "Opção de Componentes"
-    opComponentes_cmd.status_bar_text = "Opção de Componentes"
-    as_rce_tb.add_item opComponentes_cmd
+  #   # Botão interativo - OpComponentes
+  #   opComponentes_cmd = UI::Command.new("OpComponentes") { editordlg = EIS_OpComponentes::OpComponentes.new unless editordlg }
+  #   opComponentes_cmd.small_icon = "img/OpComponente.svg"
+  #   opComponentes_cmd.large_icon = "img/OpComponente.svg"
+  #   opComponentes_cmd.tooltip = "Opção de Componentes"
+  #   opComponentes_cmd.status_bar_text = "Opção de Componentes"
+  #   as_rce_tb.add_item opComponentes_cmd
 
   # Adicionar separador
   # as_rce_tb.add_separator
