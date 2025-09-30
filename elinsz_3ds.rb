@@ -8,8 +8,8 @@
 # =========================
 
 require 'sketchup.rb'
-require 'fileutils'
-require_relative 'ActivationDialog'  # Adiciona o require da ActivationDialog.rb
+# require 'fileutils'
+# require_relative 'ActivationDialog'  # Adiciona o require da ActivationDialog.rb
 
 
 ## =====================
@@ -18,7 +18,7 @@ module EIS_Extensions
 
   module ELINSZ3DS
   # PLUGIN_NAME = "ELINSZ 3DS"
-  # COMPONENT_DIR = File.join(__dir__, "componentes")
+  # COMPONENT_DIR = File.join(__dir__, "Componentes")
 
 
     # Creates new class
@@ -157,8 +157,8 @@ unless file_loaded?(__FILE__)
   # Adicionar separador
   as_rce_tb.add_separator
 
-  Botão interativo - Elinsz 3DS
-  elinsz_cmd = UI::Command.new("Elinsz 3DS") { editordlg = ELINSZ3DS::Elinsz3ds.new unless editordlg }
+  #Botão interativo - Elinsz 3DS
+  elinsz3ds_cmd = UI::Command.new("Elinsz 3DS") { editordlg = ELINSZ3DS::Elinsz3ds.new unless editordlg }
   elinsz_cmd.small_icon = "img/elinsz-2.svg"
   elinsz_cmd.large_icon = "img/elinsz-2.svg"
   elinsz_cmd.tooltip = "Menu Principal"
@@ -166,7 +166,7 @@ unless file_loaded?(__FILE__)
   as_rce_tb.add_item elinsz3ds_cmd
 
   # Adicionar separador
-  as_rce_tb.add_separator
+  # as_rce_tb.add_separator
 
   #   # Botão interativo - Usinagem
   #   usinagem_cmd = UI::Command.new("Usinagem") { editordlg = EIS_Usinagem::Usinagem.new unless editordlg }
