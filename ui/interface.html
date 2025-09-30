@@ -1,14 +1,52 @@
-<h2>Cadastrar Novo Acabamento</h2>
-<form id="form-acabamento">
-  <input type="text" id="nome-acabamento" placeholder="Nome do acabamento" required>
-  <input type="file" id="arquivo-textura" accept=".jpg,.png" required>
-  <button type="submit">Cadastrar</button>
-</form>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elinsz 3DS</title>
 
-<h2>Cadastrar Novo Acessório</h2>
-<form id="form-acessorio">
-  <input type="text" id="nome-acessorio" placeholder="Nome do acessório" required>
-  <input type="file" id="arquivo-modelo" accept=".skp" required>
-  <button type="submit">Cadastrar</button>
-</form>
+    <!-- Biblioteca Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+    <!-- Estilo personalizado -->
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div id="canvas-container"></div>
+
+    <div id="library-panel">
+        <div class="menu">
+            <button class="dropdown-btn">Biblioteca de Componentes ▾</button>
+            <div class="dropdown-content">
+                <button onclick="loadComponent('Componente 1')">Componente 1</button>
+                <button onclick="loadComponent('Componente 2')">Componente 2</button>
+                <button onclick="loadComponent('Componente 3')">Componente 3</button>
+            </div>
+        </div>
+
+        <div class="menu">
+            <button class="dropdown-btn">Componentes de Testes Salvos ▾</button>
+            <div class="dropdown-content" id="saved-components">
+                <p>Nenhum componente salvo.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="control-panel">
+        <div class="menu">
+            <button class="dropdown-btn">Ações ▾</button>
+            <div class="dropdown-content">
+                <button onclick="addModule()">Adicionar Módulo</button>
+                <button onclick="saveModules()">Salvar</button>
+                <button onclick="loadModules()">Carregar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script principal -->
+    <script src="../js/script.js"></script>
+</body>
+</html>
+
 
