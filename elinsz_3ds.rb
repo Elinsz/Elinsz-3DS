@@ -150,7 +150,7 @@ unless file_loaded?(__FILE__)
   logo_cmd = UI::Command.new("Logo") { }  # Sem ação ao clicar
   logo_cmd.small_icon = "img/elinsz.svg"  # Ícone da empresa
   logo_cmd.large_icon = "img/elinsz.svg"
-  logo_cmd.tooltip = "Plugin Elinsz 3D"
+  logo_cmd.tooltip = "Plugin Elinsz 3DS"
   logo_cmd.status_bar_text = "Logo da empresa"
   as_rce_tb.add_item logo_cmd
 
