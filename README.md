@@ -1,4 +1,4 @@
-# ELINSZ 3DS — Plugin para SketchUp
+# ELINSZ 3DS
 
 **ELINSZ 3DS** é um plugin para SketchUp voltado à marcenaria e design de interiores. Ele oferece uma biblioteca de componentes, sistema de acabamentos e acessórios de montagem com interface interativa.
 
