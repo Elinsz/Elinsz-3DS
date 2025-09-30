@@ -29,7 +29,7 @@
 
 Você pode visualizar a interface HTML no navegador:
 
-[🔗 Abrir preview no navegador](https://Elinsz.github.io/ELINSZ_3DS/ui/interface.html)
+[🔗 Abrir preview no navegador](https://Elinsz.github.io/Elinsz-3DS/ui/interface.html)
 
 > Substitua `seu-usuario` pelo seu nome de usuário do GitHub.
 
