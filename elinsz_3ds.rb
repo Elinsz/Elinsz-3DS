@@ -108,332 +108,6 @@ module EIS_Extensions
     end # class Elinsz3ds
 
 
-    module EIS_Atributos
-
-    # Creates new class
-    class Atributos < UI::WebDialog
-
-
-        # Initialize class and callbacks
-        def initialize
-
-
-          ## =====================
-
-          ## Set some variables
-
-          # Get this file's directory w/ backcomp for "//" in file path
-          @base_dir = File.dirname(__FILE__).gsub(%r{//}) { "/" }
-
-          # Get user directory
-          @user_dir = (ENV['USERPROFILE'] != nil) ? ENV['USERPROFILE'] :
-            ((ENV['HOME'] != nil) ? ENV['HOME'] : @base_dir )
-
-          # Get working directory from last file - set to user directory otherwise
-          @last_file = Sketchup.read_default "eis_Atributos", "last_file"
-          @last_file != nil ? @snip_dir = File.dirname(@last_file) : @snip_dir = @user_dir
-
-
-          ## =====================
-
-          ## Set up the WebDialog interface
-
-          # Dialog parameters
-          super "Atributos", false, "Atributos", 750, 600, 100, 100, true
-
-          # Set HTML UI file for WebDialog
-          ui_loc = File.join( @base_dir , "abertura.html" )
-          set_file( ui_loc )
-          navigation_buttons_enabled = false
-          min_width = 500
-          min_height = 500
-
-          ## =====================
-
-          ## Show the dialog and run the new routine
-
-          show do
-
-            # Set version number in about dlg
-            execute_script("var rceVersion = #{Atributos::EXTVERSION.to_s}")
-            execute_script("$('#version').text( rceVersion )")
-
-            Sketchup.status_text = "#{Atributos::EXTTITLE} | Welcome!"
-
-          end  # show
-
-          ## =====================
-
-        end # initialize
-
-
-    end # class Atributos
-
-    end  # module EIS_Atributos
-
-    ## =====================
-
-    module EIS_Usinagem
-
-      # Creates new class
-      class Usinagem < UI::WebDialog
-
-
-          # Initialize class and callbacks
-          def initialize
-
-
-            ## =====================
-
-            ## Set some variables
-
-            # Get this file's directory w/ backcomp for "//" in file path
-            @base_dir = File.dirname(__FILE__).gsub(%r{//}) { "/" }
-
-            # Get user directory
-            @user_dir = (ENV['USERPROFILE'] != nil) ? ENV['USERPROFILE'] :
-              ((ENV['HOME'] != nil) ? ENV['HOME'] : @base_dir )
-
-            # Get working directory from last file - set to user directory otherwise
-            @last_file = Sketchup.read_default "eis_Usinagem", "last_file"
-            @last_file != nil ? @snip_dir = File.dirname(@last_file) : @snip_dir = @user_dir
-
-
-            ## =====================
-
-            ## Set up the WebDialog interface
-
-            # Dialog parameters
-            super "Usinagem", false, "Usinagem", 750, 600, 100, 100, true
-
-            # Set HTML UI file for WebDialog
-            ui_loc = File.join( @base_dir , "index.html" )
-            set_file( ui_loc )
-            navigation_buttons_enabled = false
-            min_width = 500
-            min_height = 500
-
-            ## =====================
-
-            ## Show the dialog and run the new routine
-
-            show do
-
-              # Set version number in about dlg
-              execute_script("var rceVersion = #{Usinagem::EXTVERSION.to_s}")
-              execute_script("$('#version').text( rceVersion )")
-
-              Sketchup.status_text = "#{Usinagem::EXTTITLE} | Welcome!"
-
-            end  # show
-
-            ## =====================
-
-          end # initialize
-
-
-      end # class Usinagem
-
-      end  # module EIS_Usinagem
-
-
-      ## =====================
-
-      module EIS_Relatorios
-
-        # Creates new class
-        class Relatorios < UI::WebDialog
-
-
-            # Initialize class and callbacks
-            def initialize
-
-
-              ## =====================
-
-              ## Set some variables
-
-              # Get this file's directory w/ backcomp for "//" in file path
-              @base_dir = File.dirname(__FILE__).gsub(%r{//}) { "/" }
-
-              # Get user directory
-              @user_dir = (ENV['USERPROFILE'] != nil) ? ENV['USERPROFILE'] :
-                ((ENV['HOME'] != nil) ? ENV['HOME'] : @base_dir )
-
-              # Get working directory from last file - set to user directory otherwise
-              @last_file = Sketchup.read_default "eis_Relatorios", "last_file"
-              @last_file != nil ? @snip_dir = File.dirname(@last_file) : @snip_dir = @user_dir
-
-
-              ## =====================
-
-              ## Set up the WebDialog interface
-
-              # Dialog parameters
-              super "Relatorios", false, "Relatorios", 750, 600, 100, 100, true
-
-              # Set HTML UI file for WebDialog
-              ui_loc = File.join( @base_dir , "abertura.html" )
-              set_file( ui_loc )
-              navigation_buttons_enabled = false
-              min_width = 500
-              min_height = 500
-
-              ## =====================
-
-              ## Show the dialog and run the new routine
-
-              show do
-
-                # Set version number in about dlg
-                execute_script("var rceVersion = #{Relatorios::EXTVERSION.to_s}")
-                execute_script("$('#version').text( rceVersion )")
-
-                Sketchup.status_text = "#{Relatorios::EXTTITLE} | Welcome!"
-
-              end  # show
-
-              ## =====================
-
-            end # initialize
-
-
-        end # class Relatorios
-
-        end  # module EIS_Relatorios
-
-        ## =====================
-
-      module EIS_CutList
-
-        # Creates new class
-        class CutList < UI::WebDialog
-
-
-            # Initialize class and callbacks
-            def initialize
-
-
-              ## =====================
-
-              ## Set some variables
-
-              # Get this file's directory w/ backcomp for "//" in file path
-              @base_dir = File.dirname(__FILE__).gsub(%r{//}) { "/" }
-
-              # Get user directory
-              @user_dir = (ENV['USERPROFILE'] != nil) ? ENV['USERPROFILE'] :
-                ((ENV['HOME'] != nil) ? ENV['HOME'] : @base_dir )
-
-              # Get working directory from last file - set to user directory otherwise
-              @last_file = Sketchup.read_default "eis_CutList", "last_file"
-              @last_file != nil ? @snip_dir = File.dirname(@last_file) : @snip_dir = @user_dir
-
-
-              ## =====================
-
-              ## Set up the WebDialog interface
-
-              # Dialog parameters
-              super "CutList", false, "CutList", 750, 600, 100, 100, true
-
-              # Set HTML UI file for WebDialog
-              ui_loc = File.join( @base_dir , "abertura.html" )
-              set_file( ui_loc )
-              navigation_buttons_enabled = false
-              min_width = 500
-              min_height = 500
-
-              ## =====================
-
-              ## Show the dialog and run the new routine
-
-              show do
-
-                # Set version number in about dlg
-                execute_script("var rceVersion = #{CutList::EXTVERSION.to_s}")
-                execute_script("$('#version').text( rceVersion )")
-
-                Sketchup.status_text = "#{CutList::EXTTITLE} | Welcome!"
-
-              end  # show
-
-              ## =====================
-
-            end # initialize
-
-
-        end # class CutList
-
-        end  # module EIS_CutList
-
-
-        ## =====================
-
-      module EIS_OpComponentes
-
-        # Creates new class
-        class OpComponentes < UI::WebDialog
-
-
-            # Initialize class and callbacks
-            def initialize
-
-
-              ## =====================
-
-              ## Set some variables
-
-              # Get this file's directory w/ backcomp for "//" in file path
-              @base_dir = File.dirname(__FILE__).gsub(%r{//}) { "/" }
-
-              # Get user directory
-              @user_dir = (ENV['USERPROFILE'] != nil) ? ENV['USERPROFILE'] :
-                ((ENV['HOME'] != nil) ? ENV['HOME'] : @base_dir )
-
-              # Get working directory from last file - set to user directory otherwise
-              @last_file = Sketchup.read_default "eis_OpComponentes", "last_file"
-              @last_file != nil ? @snip_dir = File.dirname(@last_file) : @snip_dir = @user_dir
-
-
-              ## =====================
-
-              ## Set up the WebDialog interface
-
-              # Dialog parameters
-              super "OpComponentes", false, "OpComponentes", 750, 600, 100, 100, true
-
-              # Set HTML UI file for WebDialog
-              ui_loc = File.join( @base_dir , "abertura.html" )
-              set_file( ui_loc )
-              navigation_buttons_enabled = false
-              min_width = 500
-              min_height = 500
-
-              ## =====================
-
-              ## Show the dialog and run the new routine
-
-              show do
-
-                # Set version number in about dlg
-                execute_script("var rceVersion = #{OpComponentes::EXTVERSION.to_s}")
-                execute_script("$('#version').text( rceVersion )")
-
-                Sketchup.status_text = "#{OpComponentes::EXTTITLE} | Welcome!"
-
-              end  # show
-
-              ## =====================
-
-            end # initialize
-
-
-        end # class OpComponentes
-
-        end  # module EIS_OpComponentes
-
-
 ## ================================================================
 
     ## Show local or remote website either as a WebDialog or HtmlDialog
@@ -464,21 +138,13 @@ module EIS_Extensions
 unless file_loaded?(__FILE__)
 
   # Add main menu items
-  sub = UI.menu("Window").add_submenu("Elinsz 3D")
-  sub.add_item("Menu Principal") { editordlg = EIS_Elinsz::Elinsz.new }
-  sub.add_item("Usinagem") { editordlg = EIS_Usinagem::Usinagem.new }
-  sub.add_item("CutList") { editordlg = EIS_CutList::CutList.new }
+  sub = UI.menu("Window").add_submenu("Elinsz 3DS")
+  sub.add_item("Menu Principal") { editordlg = ELINSZ3DS::Elinsz3ds.new }
   sub.add_item("OpComponentes") { editordlg = EIS_OpComponentes::OpComponentes.new }
-  sub.add_item("Relatorios") { editordlg = EIS_Relatorios::Relatorios.new }
-  sub.add_item("Atributos") { self.browser("#{EIS_Atributos::EXTTITLE} - Atributos", File.join(EIS_Atributos::EXTDIR, 'App', 'abertura.html'), true) }
-  sub.add_item("Reference Browser") { self.browser("#{EIS_Elinsz::EXTTITLE} - Reference Browser", File.join(EIS_Elinsz::EXTDIR, 'App', 'index.html'), true) }
-  sub.add_item("Help") { self.browser("#{EIS_Elinsz::EXTTITLE} - Help", "https://www.Elinsz.com.br/") }
-
-
 
   ## Add menu items
   # Criar toolbar
-  as_rce_tb = UI::Toolbar.new "Elinsz 3D"
+  as_rce_tb = UI::Toolbar.new "Elinsz 3DS"
 
   # ÍCONE ESTÁTICO (Apenas visual)
   logo_cmd = UI::Command.new("Logo") { }  # Sem ação ao clicar
@@ -489,47 +155,45 @@ unless file_loaded?(__FILE__)
   as_rce_tb.add_item logo_cmd
 
   # Adicionar separador
-  as_rce_tb.add_separator
+  #as_rce_tb.add_separator
 
   # Botão interativo - Elinsz 3D
-  elinsz_cmd = UI::Command.new("Elinsz 3D") { editordlg = EIS_Elinsz::Elinsz.new unless editordlg }
-  elinsz_cmd.small_icon = "img/elinsz-2.svg"
-  elinsz_cmd.large_icon = "img/elinsz-2.svg"
-  elinsz_cmd.tooltip = "Menu Principal"
-  elinsz_cmd.status_bar_text = "Projeto paramétrico para sistemas Modulares"
-  as_rce_tb.add_item elinsz_cmd
+  # elinsz_cmd = UI::Command.new("Elinsz 3D") { editordlg = EIS_Elinsz::Elinsz.new unless editordlg }
+  # elinsz_cmd.small_icon = "img/elinsz-2.svg"
+  # elinsz_cmd.large_icon = "img/elinsz-2.svg"
+  # elinsz_cmd.tooltip = "Menu Principal"
+  # elinsz_cmd.status_bar_text = "Projeto paramétrico para sistemas Modulares"
+  # as_rce_tb.add_item elinsz_cmd
 
   # Adicionar separador
-  as_rce_tb.add_separator
+  # as_rce_tb.add_separator
 
-    # Botão interativo - Usinagem
-    usinagem_cmd = UI::Command.new("Usinagem") { editordlg = EIS_Usinagem::Usinagem.new unless editordlg }
-    usinagem_cmd.small_icon = "img/tools.svg"
-    usinagem_cmd.large_icon = "img/tools.svg"
-    usinagem_cmd.tooltip = "Configurador de Usinagens"
-    usinagem_cmd.status_bar_text = "Configuração de Usinagens e Ferramentas"
-    as_rce_tb.add_item usinagem_cmd
+  #   # Botão interativo - Usinagem
+  #   usinagem_cmd = UI::Command.new("Usinagem") { editordlg = EIS_Usinagem::Usinagem.new unless editordlg }
+  #   usinagem_cmd.small_icon = "img/tools.svg"
+  #   usinagem_cmd.large_icon = "img/tools.svg"
+  #   usinagem_cmd.tooltip = "Configurador de Usinagens"
+  #   usinagem_cmd.status_bar_text = "Configuração de Usinagens e Ferramentas"
+  #   as_rce_tb.add_item usinagem_cmd
 
   # Adicionar separador
-  as_rce_tb.add_separator
+  # as_rce_tb.add_separator
 
-    # Botão interativo - CutList
-    atributos_cmd = UI::Command.new("CutList") { editordlg = EIS_CutList::CutList.new unless editordlg }
-    atributos_cmd.small_icon = "img/attributes.svg"
-    atributos_cmd.large_icon = "img/attributes.svg"
-    atributos_cmd.tooltip = "CutList"
-    atributos_cmd.status_bar_text = "Gerenciador de Plano de Cortes"
-    as_rce_tb.add_item atributos_cmd
+  #   # Botão interativo - CutList
+  #   atributos_cmd = UI::Command.new("CutList") { editordlg = EIS_CutList::CutList.new unless editordlg }
+  #   atributos_cmd.small_icon = "img/attributes.svg"
+  #   atributos_cmd.large_icon = "img/attributes.svg"
+  #   atributos_cmd.tooltip = "CutList"
+  #   atributos_cmd.status_bar_text = "Gerenciador de Plano de Cortes"
+  #   as_rce_tb.add_item atributos_cmd
 
 
   # Exibir toolbar
   as_rce_tb.show
 
-
-
     # Add main menu items
     # Criar toolbar
-    as_rce_tb = UI::Toolbar.new "New toolbars-Elinsz 3D"
+    as_rce_tb = UI::Toolbar.new "New toolbars-Elinsz 3DS"
     # sub = UI.menu("Window").add_submenu("Elinsz 3D")
 
 
@@ -542,29 +206,29 @@ unless file_loaded?(__FILE__)
     as_rce_tb.add_item opComponentes_cmd
 
   # Adicionar separador
-  as_rce_tb.add_separator
+  # as_rce_tb.add_separator
 
 
-    # Botão interativo - Atributos
-    atributos_cmd = UI::Command.new("Atributos") { editordlg = EIS_Atributos::Atributos.new unless editordlg }
-    atributos_cmd.small_icon = "img/attributes.svg"
-    atributos_cmd.large_icon = "img/attributes.svg"
-    atributos_cmd.tooltip = "Configurador Atributos"
-    atributos_cmd.status_bar_text = "Atributos para sistemas de Módulos"
-    as_rce_tb.add_item atributos_cmd
+  #   # Botão interativo - Atributos
+  #   atributos_cmd = UI::Command.new("Atributos") { editordlg = EIS_Atributos::Atributos.new unless editordlg }
+  #   atributos_cmd.small_icon = "img/attributes.svg"
+  #   atributos_cmd.large_icon = "img/attributes.svg"
+  #   atributos_cmd.tooltip = "Configurador Atributos"
+  #   atributos_cmd.status_bar_text = "Atributos para sistemas de Módulos"
+  #   as_rce_tb.add_item atributos_cmd
 
   # Adicionar separador
-  as_rce_tb.add_separator
+  # as_rce_tb.add_separator
 
-    # Botão interativo - Usinagem
-    relatorios_cmd = UI::Command.new("Relatorios") { editordlg = EIS_Relatorios::Relatorios.new unless editordlg }
-    relatorios_cmd.small_icon = "img/rerun.svg"
-    relatorios_cmd.large_icon = "img/rerun.svg"
-    relatorios_cmd.tooltip = "Gerador de Relatorios"
-    relatorios_cmd.status_bar_text = "Configuração de Usinagens e Ferramentas"
-    as_rce_tb.add_item relatorios_cmd
+  #   # Botão interativo - Usinagem
+  #   relatorios_cmd = UI::Command.new("Relatorios") { editordlg = EIS_Relatorios::Relatorios.new unless editordlg }
+  #   relatorios_cmd.small_icon = "img/rerun.svg"
+  #   relatorios_cmd.large_icon = "img/rerun.svg"
+  #   relatorios_cmd.tooltip = "Gerador de Relatorios"
+  #   relatorios_cmd.status_bar_text = "Configuração de Usinagens e Ferramentas"
+  #   as_rce_tb.add_item relatorios_cmd
 
-  as_rce_tb.show
+  # as_rce_tb.show
 
   # Indicar que o arquivo foi carregado
   file_loaded(__FILE__)
