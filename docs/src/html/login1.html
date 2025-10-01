@@ -1,0 +1,93 @@
+<!--
+  <?php
+
+	require_once 'CLASSES/usuarios.php';
+	$u = new Usuario;
+
+?> -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" type="text/css" href="SKUI/src/css/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!--
+    <script type="text/javascript"
+    src="../../../tools/firebug-lite/build/firebug-lite-debug.js"></script>
+
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/sm-core-css.css"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/sm-simple.css" />
+
+    <script type="text/javascript" src="../js/lib/LAB.js"></script>
+    <script type="text/javascript" src="../js/core.js"></script>-->
+
+    <link rel="stylesheet" type="text/PHP" media="screen" href="SKUI/CLASSES/usuarios.php"/>
+    <link rel="stylesheet" type="text/PHP" media="screen" href="SKUI/PHP/login_isset.php"/>
+
+
+    <title>Autenticação</title>
+
+</head>
+<body>
+  <form class="form1">
+    <form class="login-form" method="POST" id="loginForm">
+    <div class="card">
+      <div class="card-top">
+      <img class="imglogin" src="SKUI/img/elinsz.png" alt="">
+        <h2 class="title">Faça seu Login</h2>
+        <form id="loginForm">
+
+            </br>
+
+            <div class="card-group">
+            <label for="username">Nome de Usuário:</label>
+            <input type="text" id="username" name="username" required><br>
+            </div>
+
+            <div class="card-group">
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required><br>
+            </div>
+
+            <div class="card-group1">
+            <input type="button" value="Login" onclick="btn_login()">
+            </div>
+
+        </form>
+
+        <ul class="login-utils">
+            <li class="margin-bottom-8 margin-top-8">
+              <span class="text1">
+                Esqueceu sua
+              </span>
+
+              <a href="RecSenha.html" class="text2">
+                senha?
+              </a>
+            </li>
+
+            <li>
+              <span class="text1">
+                Não tem conta?
+              </span>
+
+              <a href="cadastro.html" class="text2">
+                Criar
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--
+  <script src="SKUI/src/js/login.js"></script> -->
+
+</body>
+</html>

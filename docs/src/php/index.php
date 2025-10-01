@@ -1,0 +1,21 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['id_usuario']))
+    {
+        header("location: login.html");
+        exit;
+    }
+
+?>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title>Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+Seja Bem Vindo a essa Página!!!
+
+<a href ="sair.php"> Sair </a>
+
+</html>

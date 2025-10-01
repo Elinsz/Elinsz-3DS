@@ -1,0 +1,104 @@
+body{
+    font-family: Arial, sans-serif;
+    background-color: #ccc; /* Cinza claro */
+  }
+
+.form{
+  width: 400px;
+  margin: auto;
+  padding-top: 25px;
+}
+
+.card-top{
+  text-align: center;
+}
+
+.card-group{
+  margin-bottom: 5px;
+}
+
+.imglogin{
+  width: 100px;
+}
+
+.title{
+  padding-top: 10px;
+  font-size: 30px;
+  margin: auto;
+  color: #CD0000; /* Cor do texto */
+}
+
+  .card{
+    box-shadow: 1px 1px 5px #6d6d6d;
+    background-color: rgba(255, 255, 255); /* Branco */
+    padding: 30px;
+    border-radius: 20px;
+  }
+
+  .card-group > label{
+    width: 100%;
+    margin-top: 10px;
+    color: #222222;
+    display: block;
+  }
+
+  .card-group > input{
+    width: 96%;
+    height: 20px;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    outline: 0;
+  }
+
+
+  .login-utils li {
+    float: left;
+    font-size: 13px;
+    border: 0px;
+    list-style: none;
+    padding-left: -35px;
+  }
+  .login-utils2 {
+    float: left;
+    padding-left: 32px;
+    font-size: 13px;
+    border: 0px;
+    list-style: none;
+  }
+
+  .from3 recSenha li{
+    padding-left: 20px;
+    font-size: 13px;
+    list-style: none;
+    color: #9399e5;
+  }
+
+  .copiring{
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    padding: 5px;
+    margin-top: 20px;
+    color: #0011ff;
+  }
+
+
+  .card-group > button{
+    background-image: linear-gradient(to right, #CD0000,  #721818); /* Cor do botão */
+    color: #fff; /* Cor do texto do botão */
+    width: 98%;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 15px;
+    border: 0px;
+    outline: 0;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 20px;
+  }
+
+  button:hover{
+    background-image: linear-gradient(to right, #CD0000,  #2c0404); /* Cor do botão ao passar o mouse */
+  }
