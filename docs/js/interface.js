@@ -1,58 +1,64 @@
-let scene, camera, renderer, controls;
 
-function init() {
-    scene = new THREE.Scene();
-    scene.background = new THREE.Color(0xf4f4f4);
+document.addEventListener('DOMContentLoaded', function () {
+  // Dropdown funcionalidade
+  const subBtns = document.querySelectorAll('.sub-btn');
 
-    camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
-    camera.position.set(2, 2, 2);
+  subBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      const parentItem = btn.closest('.item');
+      const subMenu = btn.nextElementSibling;
+      const dropdownIcon = btn.querySelector('.dropdown');
+      const navLinks = document.querySelector('.nav-links');
 
-    renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    document.getElementById('canvas-container').appendChild(renderer.domElement);
+      // Alterna visibilidade do submenu
+      if (subMenu.style.display === 'block') {
+        subMenu.style.display = 'none';
+      } else {
+        subMenu.style.display = 'block';
+      }
 
-    controls = new THREE.OrbitControls(camera, renderer.domElement);
-    controls.enableDamping = true;
+      // Alterna rotação do ícone
+      if (dropdownIcon) {
+        dropdownIcon.classList.toggle('rotate');
+      }
 
-    const light = new THREE.HemisphereLight(0xffffff, 0x444444, 1);
-    scene.add(light);
+      // Ajusta scroll se for o último item
+      setTimeout(function () {
+        const items = document.querySelectorAll('.item');
+        if (parentItem === items[items.length - 1]) {
+          const offset = parentItem.offsetTop + parentItem.offsetHeight - navLinks.offsetHeight;
+          navLinks.scrollTop = offset > 0 ? offset + 25 : 0;
+        }
+      }, 300);
+    });
+  });
 
-    const grid = new THREE.GridHelper(10, 10);
-    scene.add(grid);
+  // Botões de menu lateral
+  const closeBtn = document.querySelector('.close-btn');
+  const menuBtn = document.querySelector('.menu-btn');
+  const section = document.querySelector('section');
+  const iframe = document.querySelector('section iframe');
 
-    animate();
-}
+  if (closeBtn && section) {
+    closeBtn.addEventListener('click', function () {
+      section.style.marginLeft = '0px';
+      if (iframe) iframe.style.marginLeft = '0';
+    });
+  }
 
-function animate() {
-    requestAnimationFrame(animate);
-    controls.update();
-    renderer.render(scene, camera);
-}
+  if (menuBtn && section) {
+    menuBtn.addEventListener('click', function () {
+      section.style.marginLeft = '0px';
+      // if (iframe) iframe.style.marginLeft = '10px'; // opcional
+    });
+  }
 
-function loadComponent(name) {
-    alert(`Carregando: ${name}`);
-    // Aqui você pode integrar loaders de arquivos .glb, .obj, etc.
-}
-
-function addModule() {
-    const geometry = new THREE.BoxGeometry();
-    const material = new THREE.MeshStandardMaterial({ color: 0x0077be });
-    const cube = new THREE.Mesh(geometry, material);
-    scene.add(cube);
-}
-
-function saveModules() {
-    alert("Função de salvar ainda não implementada.");
-}
-
-function loadModules() {
-    alert("Função de carregar ainda não implementada.");
-}
-
-window.addEventListener('resize', () => {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(window.innerWidth, window.innerHeight);
+  // Recarregar iframe após delay
+  setTimeout(function () {
+    const iframe = document.getElementById("meuIframe");
+    if (iframe) {
+      iframe.src = iframe.src;
+    }
+  }, 3);
 });
 
-init();
