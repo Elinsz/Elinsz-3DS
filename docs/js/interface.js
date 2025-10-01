@@ -2,6 +2,7 @@
 
 // Inicializa cena 3D com Three.js
 let scene, camera, renderer, controls;
+let savedModules = [];
 
 function init() {
   scene = new THREE.Scene();
@@ -42,28 +43,36 @@ function addModule() {
   const material = new THREE.MeshStandardMaterial({ color: 0x0077be });
   const cube = new THREE.Mesh(geometry, material);
   scene.add(cube);
+
+  savedModules.push({
+    type: 'Box',
+    position: {
+      x: cube.position.x,
+      y: cube.position.y,
+      z: cube.position.z
+    },
+    color: '#0077be'
+  });
 }
 
 function saveModules() {
-  alert("Função de salvar ainda não implementada.");
+  const json = JSON.stringify(savedModules, null, 2);
+  alert("Módulos salvos:\n" + json);
+  // Para integração com Ruby: window.location.href = 'skp:saveModules@' + encodeURIComponent(json);
 }
 
 function loadModules() {
   alert("Função de carregar ainda não implementada.");
 }
 
-// Dropdown funcionalidade
+// Dropdown funcionalidade com animação suave
 document.addEventListener('DOMContentLoaded', function () {
   const dropdowns = document.querySelectorAll('.dropdown-btn');
 
   dropdowns.forEach(function (btn) {
     btn.addEventListener('click', function () {
       const content = btn.nextElementSibling;
-      if (content.style.display === 'block') {
-        content.style.display = 'none';
-      } else {
-        content.style.display = 'block';
-      }
+      content.classList.toggle('open');
     });
   });
 });
