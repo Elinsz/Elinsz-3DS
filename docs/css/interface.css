@@ -45,9 +45,13 @@ body {
 }
 
 .dropdown-content {
-    display: none;
-    flex-direction: column;
-    margin-top: 5px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.dropdown-content.open {
+  max-height: 500px; /* ou o valor máximo esperado */
 }
 
 .menu:hover .dropdown-content {
