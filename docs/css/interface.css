@@ -44,17 +44,15 @@ body {
     text-align: left;
 }
 
+/* Dropdown oculto por padrão */
 .dropdown-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
+    display: none;
+    flex-direction: column;
+    margin-top: 5px;
 }
 
-.dropdown-content.open {
-  max-height: 500px; /* ou o valor máximo esperado */
-}
-
-.menu:hover .dropdown-content {
+/* Classe ativada via JS */
+.dropdown-content.show {
     display: flex;
 }
 
@@ -70,4 +68,3 @@ body {
 .dropdown-content button:hover {
     background-color: #ddd;
 }
-
