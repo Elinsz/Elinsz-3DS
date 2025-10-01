@@ -8,6 +8,7 @@
 # =========================
 
 require 'sketchup.rb'
+require_relative 'docs/interface_loader'
 # require 'fileutils'
 # require_relative 'ActivationDialog'  # Adiciona o require da ActivationDialog.rb
 
@@ -57,7 +58,8 @@ module EIS_Extensions
           super "Elinsz 3DS", false, "Elinsz 3DS", 750, 600, 100, 100, true
 
           # Set HTML UI file for WebDialog
-          ui_loc = File.join( @base_dir , "interface.html" )
+          # ui_loc = File.join( @base_dir , "interface.html" )
+          ui_loc = EIS_Extensions::ELINSZ3DS::InterfaceLoader.html_path
           set_file( ui_loc )
           navigation_buttons_enabled = false
           min_width = 500
@@ -165,6 +167,14 @@ unless file_loaded?(__FILE__)
   elinsz3ds_cmd.status_bar_text = "Projeto paramétrico para sistemas Modulares"
   as_rce_tb.add_item elinsz3ds_cmd
 
+  file_loaded(__FILE__)
+
+  end  # unless
+
+end  # module ELINSZ3DS
+
+end  # module EIS_Extensions
+
   # Adicionar separador
   # as_rce_tb.add_separator
 
@@ -231,10 +241,10 @@ unless file_loaded?(__FILE__)
   # as_rce_tb.show
 
   # Indicar que o arquivo foi carregado
-  file_loaded(__FILE__)
+  # file_loaded(__FILE__)
 
-end  # unless
+# end  # unless
 
-end  # module ELINSZ3DS
+# end  # module ELINSZ3DS
 
-end  # module EIS_Extensions
+# end  # module EIS_Extensions
