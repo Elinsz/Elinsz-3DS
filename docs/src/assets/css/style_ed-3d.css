@@ -105,15 +105,15 @@ body {
 .close-panel:hover::after {
   content: attr(data-tooltip);
   position: absolute;
-  top: 5px;
+  top: 4px;
   width: 30px;
   height: 30px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(105, 178, 247, 0.8);
+  background: rgba(154, 155, 255, 0.8);
   color: #fff;
   /* padding: 4px 8px; */
-  border-radius: 14px;
+  border-radius: 15px;
   font-size: 12px;
   white-space: nowrap;
   z-index: 5;
