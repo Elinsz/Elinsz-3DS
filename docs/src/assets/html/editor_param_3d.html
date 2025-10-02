@@ -15,14 +15,18 @@
 </head>
 <body>
   <!-- Botões para expandir painéis -->
-  <button class="panel-toggle left-toggle">☰ Biblioteca</button>
-  <button class="panel-toggle right-toggle">⚙️ Editor</button>
+  <!-- <button class="panel-toggle left-toggle">☰ Biblioteca</button>
+  <button class="panel-toggle right-toggle">⚙️ Editor</button> -->
+  <button id="open-left" class="panel-toggle left-toggle">☰</button>
+  <button id="open-right" class="panel-toggle right-toggle">⚙️</button>
 
   <!-- Canvas 3D -->
   <div id="canvas-container"></div>
 
   <!-- Painel lateral esquerdo -->
   <div id="library-panel" class="panel-left collapsed">
+    <button id="close-left" class="close-panel">✖</button>
+
     <div class="menu">
       <button class="dropdown-btn">Biblioteca Geral ▾</button>
       <div class="dropdown-content">
@@ -41,6 +45,8 @@
 
   <!-- Painel lateral direito -->
   <div id="control-panel" class="panel-right collapsed">
+    <button id="close-right" class="close-panel">✖</button>
+
     <div class="menu">
       <button class="dropdown-btn">Ações ▾</button>
       <div class="dropdown-content">

@@ -9,7 +9,7 @@
 
 require 'sketchup.rb'
 require_relative 'docs/interface_loader'
-require_relative 'docs/SKUI/painel_componentes'
+#require_relative 'docs/SKUI/painel_componentes'
 # require 'fileutils'
 # require_relative 'ActivationDialog'  # Adiciona o require da ActivationDialog.rb
 
