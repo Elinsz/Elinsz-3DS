@@ -1,44 +1,55 @@
-body {
+/* Reset básico */
+* {
+  box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
   overflow-x: hidden;
 }
 
+/* Área de visualização 3D */
 #canvas-container {
-  width: 100vw;
-  height: 100vh;
   position: absolute;
   top: 0;
   left: 0;
+  width: 100vw;
+  height: 100vh;
   z-index: 0;
 }
 
 /* Painéis laterais */
-.panel-left, .panel-right {
+.panel-left,
+.panel-right {
   position: fixed;
   top: 0;
   bottom: 0;
   width: 300px;
   background-color: #ffffffee;
-  padding: 15px 20px;
+  padding-top: 60px; /* espaço para o botão de fechar */
+  padding: 20px;
   overflow-y: auto;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
   z-index: 2;
-  box-sizing: border-box;
 }
 
+/* Painel esquerdo recolhido */
 .panel-left {
   left: 0;
   transform: translateX(-100%);
 }
 
+/* Painel direito recolhido */
 .panel-right {
   right: 0;
   transform: translateX(100%);
 }
 
+/* Painéis expandidos */
 .panel-left.expanded {
   transform: translateX(0);
 }
@@ -51,12 +62,10 @@ body {
 .panel-toggle {
   position: fixed;
   top: 20px;
-  padding: 10px;
-  background-color: #1d3557;
-  color: white;
+  background: none;
   border: none;
-  border-radius: 50%;
-  font-size: 18px;
+  font-size: 22px;
+  color: #333;
   cursor: pointer;
   z-index: 3;
   width: 40px;
@@ -77,11 +86,10 @@ body {
   position: absolute;
   top: 10px;
   right: 10px;
-  background-color: #e63946;
-  color: white;
+  background: none;
   border: none;
-  border-radius: 50%;
-  font-size: 16px;
+  font-size: 20px;
+  color: #333;
   cursor: pointer;
   z-index: 4;
   width: 30px;
@@ -89,9 +97,27 @@ body {
   text-align: center;
 }
 
+/* Tooltip elegante */
+.panel-toggle[title]:hover::after,
+.close-panel[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 5;
+  margin-top: 5px;
+}
+
 /* Menus internos */
 .menu {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .dropdown-btn {
@@ -103,12 +129,13 @@ body {
   cursor: pointer;
   width: 100%;
   text-align: left;
+  font-weight: bold;
 }
 
 .dropdown-content {
   display: none;
   flex-direction: column;
-  margin-top: 5px;
+  margin-top: 8px;
 }
 
 .dropdown-content.show {
@@ -119,13 +146,13 @@ body {
 .dropdown-content select,
 .dropdown-content input {
   background-color: #f1f1f1;
-  border: none;
+  border: 1px solid #ccc;
   padding: 8px;
   margin: 4px 0;
   cursor: pointer;
   text-align: left;
   width: 100%;
-  box-sizing: border-box;
+  border-radius: 4px;
 }
 
 .dropdown-content button:hover {
@@ -135,4 +162,5 @@ body {
 .dropdown-content label {
   margin-top: 8px;
   font-weight: bold;
+  display: block;
 }
