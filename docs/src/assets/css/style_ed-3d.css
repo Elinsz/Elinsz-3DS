@@ -101,22 +101,22 @@ body {
   text-align: center;
 }
 
-/* Tooltip elegante */
-.panel-toggle[title]:hover::after,
-.close-panel[title]:hover::after {
-  content: attr(title);
+.panel-toggle:hover::after,
+.close-panel:hover::after {
+  content: attr(data-tooltip);
   position: absolute;
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  background: #333;
+  background: rgba(0, 0, 0, 0.8);
   color: #fff;
   padding: 4px 8px;
   border-radius: 4px;
   font-size: 12px;
   white-space: nowrap;
   z-index: 5;
-  margin-top: 5px;
+  margin-top: 6px;
+  pointer-events: none;
 }
 
 /* Menus internos */
