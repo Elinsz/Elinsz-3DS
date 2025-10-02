@@ -65,7 +65,7 @@ body {
 /* Botões de abrir painel */
 .panel-toggle {
   position: fixed;
-  top: 20px;
+  top: 5px;
   background: none;
   border: none;
   font-size: 22px;
