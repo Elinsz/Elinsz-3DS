@@ -29,7 +29,7 @@ body {
   bottom: 0;
   width: 300px;
   background-color: #ffffffee;
-  padding-top: 60px; /* espaço para o botão de fechar */
+  /* padding-top: 60px; espaço para o botão de fechar */
   padding: 20px;
   overflow-y: auto;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
