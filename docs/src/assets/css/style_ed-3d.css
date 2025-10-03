@@ -158,10 +158,11 @@ body {
 }
 
 .dropdown-btn {
-  background-color: #e0e0ff;
+  background-color: #afafff;
   color: rgb(53, 53, 53);
   padding: 8px;
-  border: none;
+  /* border: none; */
+  border: 1px solid #adadad;
   border-radius: 4px;
   cursor: pointer;
   width: 100%;
