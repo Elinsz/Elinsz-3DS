@@ -154,13 +154,13 @@ body {
 
 /* Menus internos */
 .menu {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .dropdown-btn {
   background-color: #e63946;
   color: white;
-  padding: 10px;
+  padding: 8px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -173,7 +173,7 @@ body {
 .dropdown-content {
   display: none;
   flex-direction: column;
-  margin-top: 8px;
+  margin-top: 4px;
   font-size: 12px;
 }
 
@@ -186,8 +186,8 @@ body {
 .dropdown-content input {
   background-color: #f1f1f1;
   border: 1px solid #ccc;
-  padding: 8px;
-  margin: 4px 0;
+  padding: 4px;
+  margin: 2px 0;
   cursor: pointer;
   text-align: left;
   width: 100%;
@@ -199,7 +199,7 @@ body {
 }
 
 .dropdown-content label {
-  margin-top: 8px;
+  margin-top: 4px;
   font-weight: bold;
   display: block;
 }
