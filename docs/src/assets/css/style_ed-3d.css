@@ -167,13 +167,14 @@ body {
   width: 100%;
   text-align: left;
   font-weight: bold;
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .dropdown-content {
   display: none;
   flex-direction: column;
   margin-top: 8px;
+  font-size: 12px;
 }
 
 .dropdown-content.show {
