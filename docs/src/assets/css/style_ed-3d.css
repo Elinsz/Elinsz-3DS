@@ -88,11 +88,11 @@ body {
 /* Botões de fechar painel */
 .close-panel {
   position: absolute;
-  top: 2px;
+  top: 10px;
   right: 10px;
   background: none;
   border: none;
-  font-size: 12px;
+  font-size: 20px;
   color: #333;
   cursor: pointer;
   z-index: 4;
