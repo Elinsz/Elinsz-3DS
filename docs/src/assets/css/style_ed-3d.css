@@ -161,8 +161,8 @@ body {
   background: rgba(134, 136, 243, 0.8);
   color: rgb(53, 53, 53);
   padding: 8px;
-  /* border: none; */
-  border: 1px solid #adadad;
+  border: none;
+  /* border: 1px solid #adadad; */
   border-radius: 4px;
   cursor: pointer;
   width: 100%;
