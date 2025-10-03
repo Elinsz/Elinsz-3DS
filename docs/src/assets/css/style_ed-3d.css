@@ -88,11 +88,11 @@ body {
 /* Botões de fechar painel */
 .close-panel {
   position: absolute;
-  /* top: 15px; */
+  top: 2px;
   right: 10px;
   background: none;
   border: none;
-  font-size: 20px;
+  font-size: 12px;
   color: #333;
   cursor: pointer;
   z-index: 4;
@@ -123,7 +123,7 @@ body {
 .close-panel:hover::after {
   content: attr(data-tooltip);
   position: absolute;
-  /* top: 5px; */
+  top: -5px;
   width: 30px;
   height: 30px;
   left: 50%;
