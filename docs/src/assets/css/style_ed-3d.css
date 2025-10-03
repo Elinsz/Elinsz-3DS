@@ -158,7 +158,7 @@ body {
 }
 
 .dropdown-btn {
-  background-color: #afafff;
+  background: rgba(134, 136, 243, 0.8);
   color: rgb(53, 53, 53);
   padding: 8px;
   /* border: none; */
