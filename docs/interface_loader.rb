@@ -6,10 +6,10 @@ module EIS_Extensions
         File.join(base_dir, "ui", "interface.html")
       end
 
-      def self.html_path
-        base_dir = File.dirname(__FILE__).gsub(%r{//}) { "/" }
-        File.join(base_dir, "Sem uso ext","SKUI","html","elinsz_pt-BR.html")
-      end
+      # def self.html_path
+      #   base_dir = File.dirname(__FILE__).gsub(%r{//}) { "/" }
+      #   File.join(base_dir, "Sem uso ext","SKUI","html","elinsz_pt-BR.html")
+      # end
 
       def self.css_path
         File.join(File.dirname(__FILE__), "css", "interface.css")
