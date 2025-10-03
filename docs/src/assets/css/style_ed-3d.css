@@ -135,7 +135,7 @@ body {
   font-size: 12px;
   white-space: nowrap;
   z-index: 5;
-  margin-top: 6px;
+  /* margin-top: 6px; */
   pointer-events: none;
 }
 
