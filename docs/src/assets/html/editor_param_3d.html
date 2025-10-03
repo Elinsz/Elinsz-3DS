@@ -143,6 +143,37 @@
   </div>
 
   <!-- Script principal -->
-  <script src="../js/script_ed-3d.js"></script>
+  <!-- <script src="../js/script_ed-3d.js"></script> -->
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      // Painéis laterais
+      $('#open-left').click(function () {
+        $('.panel-left').addClass('expanded');
+        $('#open-left').css('display', 'none');
+      });
+
+      $('#open-right').click(function () {
+        $('.panel-right').addClass('expanded');
+        $('#open-right').css('display', 'none');
+      });
+
+      $('#close-left').click(function () {
+        $('.panel-left').removeClass('expanded');
+        $('#open-left').css('display', 'block');
+      });
+
+      $('#close-right').click(function () {
+        $('.panel-right').removeClass('expanded');
+        $('#open-right').css('display', 'block');
+      });
+
+      // Dropdowns internos
+      $('.dropdown-btn').click(function () {
+        $(this).next('.dropdown-content').toggleClass('show');
+      });
+    });
+  </script>
+
 </body>
 </html>
