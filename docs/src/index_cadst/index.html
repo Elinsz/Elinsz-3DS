@@ -28,11 +28,32 @@
       <form method="POST">
         <div id="input-data">
           <div class="input-group">
-            <input id="name" class="input-text" placeholder="Nome" type="text" required />
+            <!-- Linha 1 -->
+            <input id="codigo" class="input-text" placeholder="Código" type="text" required />
+            <input id="data" class="input-text" placeholder="Data Registro" type="date" required />
+
+            <!-- Linha 2 -->
+            <input id="nome" class="input-text" placeholder="Nome" type="text" required />
+            <input id="cpf" class="input-text" placeholder="CPF/CNPJ" type="text" required />
+
+            <!-- Linha 3 -->
+            <input id="endereco" class="input-text" placeholder="Endereço" type="text" required />
+            <input id="bairro" class="input-text" placeholder="Bairro" type="text" required />
+
+            <!-- Linha 4 -->
+            <input id="cidade" class="input-text" placeholder="Cidade" type="text" required />
+            <input id="uf" class="input-text" placeholder="UF" type="text" required />
+
+            <!-- Linha 5 -->
+            <input id="cep" class="input-text" placeholder="CEP" type="text" required />
             <input id="email" class="input-text" placeholder="Email" type="email" required />
-            <input id="phone" class="input-text" placeholder="Telefone" type="number" required />
-            <input id="work" class="input-text" placeholder="Profissão" type="text" required />
+
+            <!-- Linha 6 -->
+            <input id="fone1" class="input-text" placeholder="Fone 1" type="text" required />
+            <input id="fone2" class="input-text" placeholder="Fone 2" type="text" />
           </div>
+
+          <!-- Botões -->
           <input id="add-btn" class="input-btn" type="submit" value="Cadastrar" onclick="return addToTable()" />
           <input id="update-btn" class="input-btn" type="button" value="Atualizar" onclick="return updateTable()" style="display: none;" />
         </div>
@@ -46,10 +67,18 @@
           <thead>
             <tr>
               <th>ID</th>
+              <th>Código</th>
+              <th>Data</th>
               <th>Nome</th>
+              <th>CPF/CNPJ</th>
+              <th>Endereço</th>
+              <th>Bairro</th>
+              <th>Cidade</th>
+              <th>UF</th>
+              <th>CEP</th>
               <th>Email</th>
-              <th>Telefone</th>
-              <th>Profissão</th>
+              <th>Fone 1</th>
+              <th>Fone 2</th>
               <th>Ação</th>
             </tr>
           </thead>
