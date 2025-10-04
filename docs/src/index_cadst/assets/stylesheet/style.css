@@ -43,7 +43,7 @@
     padding: 4px 6px;
     border-radius: 6px;
     height: auto;
-    max-height: 34px;
+    max-height: 40px;
   }
 
 
@@ -54,12 +54,12 @@
 
   .input-btn {
     width: 100%;
-    max-width: 200px;
+    max-width: 300px;
     font-size: 12px;
     padding: 6px 10px;
     border-radius: 6px;
     height: auto;
-    max-height: 36px;
+    max-height: 40px;
     margin-top: 8px;
   }
 
