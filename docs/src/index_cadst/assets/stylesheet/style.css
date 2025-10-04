@@ -30,15 +30,12 @@
 
 /* Campos de texto */
 .input-text {
-  flex: 1 1 210px;
   font-size: 12px;
   padding: 4px 6px;
   border-radius: 6px;
-  border: 1px solid #262626;
-  outline: none;
-  transition: 0.25s;
-  height: auto; /* deixa a altura se ajustar ao conteúdo */
+  height: auto;
 }
+
 
 
 
@@ -49,18 +46,12 @@
 
 /* Botão de envio */
 .input-btn {
-  flex: 1 1 100%;
   font-size: 12px;
   padding: 6px 12px;
   border-radius: 6px;
-  border: 1px solid #262626;
-  cursor: pointer;
-  transition: 0.3s all ease;
-  text-align: center;
-  margin-top: 8px;
-  align-self: center;
   height: auto;
 }
+
 
 /* Hover do botão */
 .input-btn:hover {
@@ -122,18 +113,9 @@ input::-webkit-inner-spin-button {
 
 /* --------------------------- Responsividade --------------------------- */
 @media screen and (max-width: 600px) {
-  #input-data {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .input-text {
-    width: 100%;
-    max-width: 300px;
-  }
-
+  .input-text,
   .input-btn {
-    width: 100%;
-    max-width: 200px;
+    max-height: 36px;
   }
 }
+
