@@ -7,8 +7,6 @@
 /* --------------------------- Cabeçalho Principal --------------------------- */
 #nav {
   width: 100%;
-  min-width: 1200px;
-  height: 10vh;
   background-color: rgba(134, 136, 243);
   color: white;
   font-size: 2em;
@@ -23,7 +21,6 @@
 /* --------------------------- Navegação Secundária --------------------------- */
 #sub-nav {
   width: 100%;
-  min-width: 1200px;
   background-color: #eaeaea;
   padding: 10px 20px;
   position: sticky;
@@ -130,7 +127,7 @@
   border-color: rgba(134, 136, 243);
 }
 
-/* Botões sempre visíveis */
+/* Botões sempre visíveis lado a lado */
 .input-btn {
   font-family: Ubuntu;
   font-size: 12px;
@@ -155,11 +152,12 @@
   width: 100%;
   overflow-x: auto;
   margin-top: 20px;
+  padding: 0 20px;
 }
 
 #myTable {
   font-family: Ubuntu;
-  min-width: 1200px;
+  min-width: 1000px;
   width: 100%;
   border-collapse: collapse;
 }
@@ -233,5 +231,9 @@
   .input-btn {
     width: 100%;
     max-width: 200px;
+  }
+
+  .table-wrapper {
+    padding: 0 10px;
   }
 }
