@@ -23,33 +23,37 @@
   margin: 0 auto;
   margin-top: 5vh;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.input-group {
+  display: flex;
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
+  width: 100%;
 }
 
-/* Campos de texto */
 .input-text {
+  flex: 1 1 210px;
   font-size: 12px;
-  padding: 4px 6px;
+  padding: 6px 8px;
   border-radius: 6px;
+  border: 1px solid #262626;
+  outline: none;
   height: auto;
+  transition: 0.25s;
 }
 
-
-
-
-/* Foco nos inputs */
 .input-text:focus {
   border-color: rgba(134, 136, 243);
 }
 
-/* Botão de envio */
 .input-btn {
-  flex: 0 0 auto;
   width: 100%;
   max-width: 200px;
-  margin: 10px auto 0 auto;
   padding: 6px 12px;
   font-size: 12px;
   border-radius: 6px;
@@ -57,9 +61,9 @@
   cursor: pointer;
   transition: 0.3s all ease;
   text-align: center;
+  margin-top: 10px;
   display: block;
 }
-
 
 /* Hover do botão */
 .input-btn:hover {
@@ -121,9 +125,18 @@ input::-webkit-inner-spin-button {
 
 /* --------------------------- Responsividade --------------------------- */
 @media screen and (max-width: 600px) {
-  .input-text,
+  .input-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .input-text {
+    width: 100%;
+    max-width: 300px;
+  }
+
   .input-btn {
-    max-height: 36px;
+    width: 100%;
+    max-width: 200px;
   }
 }
-

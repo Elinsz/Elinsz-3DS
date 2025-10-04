@@ -16,11 +16,13 @@
     <section id="table">
         <form method="POST">
             <div id="input-data">
+            <div class="input-group">
                 <input id="name" class="input-text" placeholder="Nome" type="text" required />
                 <input id="email" class="input-text" placeholder="Email" type="email" required />
                 <input id="phone" class="input-text" placeholder="Telefone" type="number" required />
                 <input id="work" class="input-text" placeholder="Profissão" type="text" required />
-                <input class="input-btn" type="submit" value="Enviar" onclick="return addToTable()" />
+            </div>
+            <input class="input-btn" type="submit" value="Enviar" onclick="return addToTable()" />
             </div>
         </form>
         <table id="myTable">
