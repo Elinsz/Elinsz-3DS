@@ -19,12 +19,20 @@
 }
 
 /* --------------------------- Navegação Secundária --------------------------- */
-#sub-nav {
+/* #sub-nav {
   width: 100%;
   background-color: #eaeaea;
   padding: 10px 20px;
   position: sticky;
   top: 10vh;
+  z-index: 9;
+} */
+
+#sub-nav {
+  width: 100%;
+  background-color: #eaeaea;
+  box-sizing: border-box;
+  padding: 10px 5vw; /* 5vw de cada lado = 90vw total */
   z-index: 9;
 }
 
