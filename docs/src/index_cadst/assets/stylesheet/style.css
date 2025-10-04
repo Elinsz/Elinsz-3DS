@@ -130,13 +130,3 @@ input::-webkit-inner-spin-button {
     align-items: center;
   }
 
-  .input-text {
-    width: 100%;
-    max-width: 300px;
-  }
-
-  .input-btn {
-    width: 100%;
-    max-width: 200px;
-  }
-}
