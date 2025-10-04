@@ -1,6 +1,6 @@
 let editRowId = null;
 
-// Função para adicionar novo registro
+// Adiciona novo registro
 function addToTable() {
   const name = document.getElementById('name').value.trim();
   const email = document.getElementById('email').value.trim();
@@ -23,8 +23,10 @@ function addToTable() {
   row.insertCell(3).textContent = phone;
   row.insertCell(4).textContent = work;
   row.insertCell(5).innerHTML = `
-    <button class="remove-btn" onclick="editRow(this)">✏️</button>
-    <button class="remove-btn" onclick="removeToTable(this)">🗑️</button>
+    <div class="action-icons">
+      <button class="remove-btn" onclick="editRow(this)">✏️</button>
+      <button class="remove-btn" onclick="removeToTable(this)">🗑️</button>
+    </div>
   `;
 
   clearForm();
@@ -32,14 +34,14 @@ function addToTable() {
   return false;
 }
 
-// Função para remover registro
+// Remove registro
 function removeToTable(button) {
   const row = button.closest('tr');
   if (row) row.remove();
   return false;
 }
 
-// Função para editar registro
+// Edita registro
 function editRow(button) {
   const row = button.closest('tr');
   if (!row) return;
@@ -57,7 +59,7 @@ function editRow(button) {
   showTab('form-tab');
 }
 
-// Função para atualizar registro existente
+// Atualiza registro existente
 function updateTable() {
   if (!editRowId) return false;
 
@@ -74,7 +76,7 @@ function updateTable() {
   return false;
 }
 
-// Função para limpar o formulário
+// Limpa o formulário
 function clearForm() {
   document.getElementById('name').value = "";
   document.getElementById('email').value = "";
@@ -87,7 +89,7 @@ function clearForm() {
   editRowId = null;
 }
 
-// Alternância entre abas
+// Alterna entre abas
 function showTab(tabId) {
   const tabs = document.querySelectorAll('.tab-content');
   const links = document.querySelectorAll('.tab-link');
