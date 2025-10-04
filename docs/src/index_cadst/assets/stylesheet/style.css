@@ -157,10 +157,11 @@
 
 /* --------------------------- Aba de Registros --------------------------- */
 .table-wrapper {
-  width: 99vw;
+  width: 100%;
   overflow-x: auto;
-  margin-top: 20px;
   padding: 0 20px;
+  display: flex;
+  justify-content: center;
 }
 
 #myTable {
