@@ -30,21 +30,24 @@
 }
 
 .input-group {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(200px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 10px;
   width: 100%;
 }
 
+
 .input-text {
+  width: calc(50% - 10px);
+  min-width: 200px;
   font-size: 12px;
   padding: 6px 8px;
   border-radius: 6px;
   border: 1px solid #262626;
-  outline: none;
-  width: 100%;
   box-sizing: border-box;
 }
+
 
 
 .input-text:focus {
@@ -55,7 +58,7 @@
   width: 100%;
   max-width: 300px;
   padding: 6px 12px;
-  font-size: 12px;
+  font-size: 14px;
   border-radius: 6px;
   border: 1px solid #262626;
   cursor: pointer;
