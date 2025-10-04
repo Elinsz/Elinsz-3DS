@@ -30,39 +30,40 @@
 }
 
 .input-group {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(200px, 1fr));
   gap: 10px;
-  justify-content: center;
   width: 100%;
 }
 
-  .input-text {
-    width: 100%;
-    max-width: 260px;
-    font-size: 12px;
-    padding: 4px 6px;
-    border-radius: 6px;
-    height: auto;
-    max-height: 45px;
-  }
-
+.input-text {
+  font-size: 12px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid #262626;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
 
 
 .input-text:focus {
   border-color: rgba(134, 136, 243);
 }
 
-  .input-btn {
-    width: 100%;
-    /* max-width: 260px; */
-    font-size: 12px;
-    padding: 6px 6px;
-    border-radius: 6px;
-    height: auto;
-    max-height: 40px;
-    margin-top: 5px;
-  }
+.input-btn {
+  width: 100%;
+  max-width: 200px;
+  padding: 6px 12px;
+  font-size: 12px;
+  border-radius: 6px;
+  border: 1px solid #262626;
+  cursor: pointer;
+  transition: 0.3s all ease;
+  text-align: center;
+  margin-top: 10px;
+}
+
 
 
 /* Hover do botão */
