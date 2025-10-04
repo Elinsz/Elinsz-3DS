@@ -13,7 +13,8 @@
   font-size: 2em;
   font-family: Ubuntu;
   text-align: center;
-  line-height: 14vh;
+  align-items: center;
+  line-height: 10vh;
 }
 
 /* --------------------------- Form --------------------------- */
