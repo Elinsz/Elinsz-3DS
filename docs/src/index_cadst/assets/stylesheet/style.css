@@ -36,34 +36,33 @@
   width: 100%;
 }
 
-.input-text {
-  flex: 1 1 210px;
-  font-size: 12px;
-  padding: 6px 8px;
-  border-radius: 6px;
-  border: 1px solid #262626;
-  outline: none;
-  height: auto;
-  transition: 0.25s;
-}
+  .input-text {
+    width: 100%;
+    max-width: 280px;
+    font-size: 12px;
+    padding: 4px 6px;
+    border-radius: 6px;
+    height: auto;
+    max-height: 34px;
+  }
+
+
 
 .input-text:focus {
   border-color: rgba(134, 136, 243);
 }
 
-.input-btn {
-  width: 100%;
-  max-width: 200px;
-  padding: 6px 12px;
-  font-size: 12px;
-  border-radius: 6px;
-  border: 1px solid #262626;
-  cursor: pointer;
-  transition: 0.3s all ease;
-  text-align: center;
-  margin-top: 10px;
-  display: block;
-}
+  .input-btn {
+    width: 100%;
+    max-width: 200px;
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    height: auto;
+    max-height: 36px;
+    margin-top: 8px;
+  }
+
 
 /* Hover do botão */
 .input-btn:hover {
@@ -129,4 +128,4 @@ input::-webkit-inner-spin-button {
     flex-direction: column;
     align-items: center;
   }
-
+}
