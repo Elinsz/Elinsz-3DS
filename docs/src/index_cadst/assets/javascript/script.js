@@ -1,3 +1,6 @@
+let editRowId = null;
+
+// Função para adicionar novo registro
 function addToTable() {
   const name = document.getElementById('name').value.trim();
   const email = document.getElementById('email').value.trim();
@@ -6,7 +9,7 @@ function addToTable() {
   const tbody = document.querySelector('#myTable tbody');
 
   if (!name || !email || !phone || !work) {
-    alert("Preencha todos os campos antes de enviar.");
+    alert("Preencha todos os campos.");
     return false;
   }
 
@@ -19,24 +22,72 @@ function addToTable() {
   row.insertCell(2).textContent = email;
   row.insertCell(3).textContent = phone;
   row.insertCell(4).textContent = work;
-  row.insertCell(5).innerHTML = `<button class="remove-btn" onclick="removeToTable(this)">Remover</button>`;
+  row.insertCell(5).innerHTML = `
+    <button class="remove-btn" onclick="editRow(this)">✏️</button>
+    <button class="remove-btn" onclick="removeToTable(this)">🗑️</button>
+  `;
 
-  document.getElementById('name').value = "";
-  document.getElementById('email').value = "";
-  document.getElementById('phone').value = "";
-  document.getElementById('work').value = "";
-
-  showTab('table-tab'); // Alterna para a aba de registros
-
+  clearForm();
+  showTab('table-tab');
   return false;
 }
 
+// Função para remover registro
 function removeToTable(button) {
   const row = button.closest('tr');
   if (row) row.remove();
   return false;
 }
 
+// Função para editar registro
+function editRow(button) {
+  const row = button.closest('tr');
+  if (!row) return;
+
+  editRowId = row.id;
+
+  document.getElementById('name').value = row.cells[1].textContent;
+  document.getElementById('email').value = row.cells[2].textContent;
+  document.getElementById('phone').value = row.cells[3].textContent;
+  document.getElementById('work').value = row.cells[4].textContent;
+
+  document.getElementById('add-btn').style.display = 'none';
+  document.getElementById('update-btn').style.display = 'block';
+
+  showTab('form-tab');
+}
+
+// Função para atualizar registro existente
+function updateTable() {
+  if (!editRowId) return false;
+
+  const row = document.getElementById(editRowId);
+  if (!row) return false;
+
+  row.cells[1].textContent = document.getElementById('name').value.trim();
+  row.cells[2].textContent = document.getElementById('email').value.trim();
+  row.cells[3].textContent = document.getElementById('phone').value.trim();
+  row.cells[4].textContent = document.getElementById('work').value.trim();
+
+  clearForm();
+  showTab('table-tab');
+  return false;
+}
+
+// Função para limpar o formulário
+function clearForm() {
+  document.getElementById('name').value = "";
+  document.getElementById('email').value = "";
+  document.getElementById('phone').value = "";
+  document.getElementById('work').value = "";
+
+  document.getElementById('add-btn').style.display = 'block';
+  document.getElementById('update-btn').style.display = 'none';
+
+  editRowId = null;
+}
+
+// Alternância entre abas
 function showTab(tabId) {
   const tabs = document.querySelectorAll('.tab-content');
   const links = document.querySelectorAll('.tab-link');
