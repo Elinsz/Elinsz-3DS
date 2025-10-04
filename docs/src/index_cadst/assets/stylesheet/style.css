@@ -7,6 +7,7 @@
 /* --------------------------- Cabeçalho Principal --------------------------- */
 #nav {
   width: 100%;
+  min-width: 1200px;
   height: 10vh;
   background-color: rgba(134, 136, 243);
   color: white;
@@ -14,12 +15,20 @@
   font-family: Ubuntu;
   text-align: center;
   line-height: 14vh;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 /* --------------------------- Navegação Secundária --------------------------- */
 #sub-nav {
+  width: 100%;
+  min-width: 1200px;
   background-color: #eaeaea;
   padding: 10px 20px;
+  position: sticky;
+  top: 10vh;
+  z-index: 9;
 }
 
 .tab-menu {
@@ -124,12 +133,9 @@
   border-color: rgba(134, 136, 243);
 }
 
-/* Botões de ação */
+/* Botões de ação visíveis lado a lado */
 .input-btn {
-  display: block;
-  margin: 10px auto 0 auto;
-  max-width: 200px;
-  width: 100%;
+  font-family: Ubuntu;
   font-size: 12px;
   padding: 6px 12px;
   border-radius: 6px;
@@ -137,6 +143,7 @@
   cursor: pointer;
   text-align: center;
   transition: 0.3s all ease;
+  margin: 10px 5px 0 5px;
 }
 
 .input-btn:hover {
@@ -166,8 +173,13 @@
 }
 
 /* --------------------------- Tabela --------------------------- */
+#table-tab {
+  overflow-x: auto;
+}
+
 #myTable {
   font-family: Ubuntu;
+  min-width: 1200px;
   width: 100%;
   margin-top: 20px;
   border-collapse: collapse;
