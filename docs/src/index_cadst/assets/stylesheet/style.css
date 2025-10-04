@@ -38,7 +38,7 @@
 
   .input-text {
     width: 100%;
-    max-width: 250px;
+    max-width: 280px;
     font-size: 12px;
     padding: 4px 6px;
     border-radius: 6px;
@@ -54,7 +54,7 @@
 
   .input-btn {
     width: 100%;
-    max-width: 300px;
+    max-width: 280px;
     font-size: 12px;
     padding: 6px 6px;
     border-radius: 6px;
@@ -84,7 +84,7 @@ input::-webkit-inner-spin-button {
   font-family: Ubuntu;
   width: 90%;
   margin: 0 auto;
-  margin-top: 5vh;
+  margin-top: 3vh;
   border-collapse: collapse;
 }
 
