@@ -24,8 +24,8 @@ function addToTable() {
   row.insertCell(4).textContent = work;
   row.insertCell(5).innerHTML = `
     <div class="action-icons">
-      <button class="remove-btn" onclick="editRow(this)">✏️</button>
-      <button class="remove-btn" onclick="removeToTable(this)">🗑️</button>
+    <button class="remove-btn" title="Editar" onclick="editRow(this)">✏️</button>
+    <button class="remove-btn" title="Excluir" onclick="removeToTable(this)">🗑️</button>
     </div>
   `;
 

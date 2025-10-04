@@ -139,6 +139,10 @@
   padding: 4px;
 }
 
+.remove-btn:hover {
+  opacity: 0.8;
+}
+
 /* --------------------------- Tabela --------------------------- */
 #myTable {
   font-family: Ubuntu;
@@ -150,11 +154,16 @@
 #myTable thead {
   background-color: rgba(134, 136, 243);
   color: white;
+  font-family: Ubuntu;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 #myTable th {
-  padding: 10px;
-  font-weight: 100;
+  padding: 12px 8px;
+  font-weight: 500;
+  text-align: center;
 }
 
 #myTable td,
@@ -165,6 +174,7 @@
 
 #myTable td {
   padding: 5px;
+  text-align: center;
 }
 
 #myTable tr:nth-child(even) {
