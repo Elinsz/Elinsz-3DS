@@ -33,8 +33,8 @@
             <input id="phone" class="input-text" placeholder="Telefone" type="number" required />
             <input id="work" class="input-text" placeholder="Profissão" type="text" required />
           </div>
-            <input id="add-btn" class="input-btn" type="submit" value="Cadastrar" onclick="return addToTable()" />
-            <input id="update-btn" class="input-btn" type="button" value="Atualizar" onclick="return updateTable()" style="display: none;" />
+          <input id="add-btn" class="input-btn" type="submit" value="Cadastrar" onclick="return addToTable()" />
+          <input id="update-btn" class="input-btn" type="button" value="Atualizar" onclick="return updateTable()" style="display: none;" />
         </div>
       </form>
     </div>
@@ -42,14 +42,19 @@
     <!-- Aba de registros -->
     <div id="table-tab" class="tab-content">
       <table id="myTable">
-        <tr id="0">
-          <th>ID</th>
-          <th>Nome</th>
-          <th>Email</th>
-          <th>Telefone</th>
-          <th>Profissão</th>
-          <th>Ação</th>
-        </tr>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Telefone</th>
+            <th>Profissão</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Linhas serão adicionadas aqui -->
+        </tbody>
       </table>
     </div>
   </section>
