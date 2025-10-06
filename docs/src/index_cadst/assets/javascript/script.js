@@ -1,5 +1,24 @@
 let editRowId = null;
 
+// Ativa eventos de troca de abas ao carregar
+document.addEventListener('DOMContentLoaded', () => {
+  const links = document.querySelectorAll('.tab-link');
+  links.forEach(link => {
+    link.addEventListener('click', event => {
+      event.preventDefault();
+      const tabId = link.getAttribute('data-tab');
+      showTab(tabId);
+    });
+  });
+
+  // Corrige campo de data se necessário
+  const dataInput = document.getElementById('data');
+  if (dataInput && dataInput.type !== 'date') {
+    dataInput.type = 'text'; // fallback para ambientes sem suporte
+    dataInput.placeholder = 'dd/mm/aaaa';
+  }
+});
+
 // Função para alternar entre abas
 function showTab(tabId) {
   const tabs = document.querySelectorAll('.tab-content');
@@ -8,8 +27,14 @@ function showTab(tabId) {
   tabs.forEach(tab => tab.classList.remove('active'));
   links.forEach(link => link.classList.remove('active'));
 
-  document.getElementById(tabId).classList.add('active');
-  document.querySelector(`[onclick="showTab('${tabId}')"]`).classList.add('active');
+  const targetTab = document.getElementById(tabId);
+  if (targetTab) targetTab.classList.add('active');
+
+  links.forEach(link => {
+    if (link.getAttribute('data-tab') === tabId) {
+      link.classList.add('active');
+    }
+  });
 }
 
 // Função para limpar o formulário
@@ -18,9 +43,12 @@ function clearForm() {
     'codigo', 'data', 'nome', 'cpf', 'endereco', 'bairro',
     'cidade', 'uf', 'cep', 'email', 'fone1', 'fone2'
   ];
-  fields.forEach(id => document.getElementById(id).value = '');
+  fields.forEach(id => {
+    const input = document.getElementById(id);
+    if (input) input.value = '';
+  });
 
-  document.getElementById('add-btn').style.display = 'block';
+  document.getElementById('add-btn').style.display = 'inline-block';
   document.getElementById('update-btn').style.display = 'none';
 
   editRowId = null;
@@ -44,7 +72,6 @@ function addToTable() {
     fone2: document.getElementById('fone2').value.trim()
   };
 
-  // Validação simples
   if (!fields.codigo || !fields.data || !fields.nome || !fields.cpf) {
     alert("Preencha os campos obrigatórios.");
     return false;
@@ -100,7 +127,7 @@ function editRow(button) {
   document.getElementById('fone2').value = row.cells[12].textContent;
 
   document.getElementById('add-btn').style.display = 'none';
-  document.getElementById('update-btn').style.display = 'block';
+  document.getElementById('update-btn').style.display = 'inline-block';
 
   showTab('form-tab');
 }
