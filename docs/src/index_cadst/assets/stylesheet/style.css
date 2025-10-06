@@ -20,7 +20,7 @@ body {
 
 .tab-menu {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   list-style: none;
   padding: 0;
 }
