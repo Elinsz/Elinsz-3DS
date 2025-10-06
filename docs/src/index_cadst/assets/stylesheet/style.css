@@ -1,10 +1,9 @@
-/* --------------------------- Font --------------------------- */
 @font-face {
   font-family: "Ubuntu";
   src: url("../font/Ubuntu-M.ttf") format("truetype");
 }
 
-/* --------------------------- Cabeçalho Principal --------------------------- */
+/* Cabeçalho principal */
 #nav {
   width: 100%;
   background-color: #721818;
@@ -12,41 +11,43 @@
   font-size: 2em;
   font-family: Ubuntu;
   text-align: center;
-  line-height: 14vh;
-  position: sticky;
+  height: 80px;
+  line-height: 80px;
+  position: relative;
   top: 0;
   z-index: 10;
 }
 
-/* --------------------------- Navegação Secundária --------------------------- */
+/* Navegação secundária */
 #sub-nav {
   width: 100%;
   background-color: #eaeaea;
-  box-sizing: border-box;
-  padding: 10px 5vw;
+  font-family: Ubuntu;
+  height: 50px;
+  line-height: 50px;
+  position: relative;
+  top: 0;
   z-index: 9;
-  position: sticky;
-  top: 10vh;
 }
 
 .tab-menu {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  margin: 0;
-  padding: 0;
+  display: table;
+  width: 100%;
+  table-layout: fixed;
 }
 
 .tab-menu li {
-  margin: 0;
+  display: table-cell;
+  text-align: center;
 }
 
 .tab-link {
+  display: inline-block;
   font-family: Ubuntu;
   text-decoration: none;
   padding: 8px 16px;
   border-radius: 6px;
-  background-color: #d6d7f3; /* rgba(134, 136, 243, 0.2) */
+  background-color: #d6d7f3;
   color: #333333;
   font-size: 14px;
   transition: background-color 0.3s ease;
@@ -54,82 +55,75 @@
 }
 
 .tab-link:hover {
-  background-color: #aeb0f3; /* rgba(134, 136, 243, 0.4) */
+  background-color: #aeb0f3;
 }
 
 .tab-link.active {
-  background-color: #8688f3; /* rgba(134, 136, 243) */
+  background-color: #8688f3;
   color: #ffffff;
 }
 
-/* --------------------------- Área de Abas --------------------------- */
+/* Área de abas */
 #tabs {
   width: 100%;
-  margin-top: 20px;
 }
 
 .tab-content {
   display: none;
+  width: 100%;
 }
 
 .tab-content.active {
   display: block;
 }
 
-/* --------------------------- Aba de Cadastro --------------------------- */
-#form-tab .input-group {
-  width: 90vw;
-  margin: 0 auto;
-  margin-top: 20px;
+/* Aba de cadastro */
+#form-tab {
+  display: block;
+  width: 100%;
 }
 
 #input-data {
   font-family: Ubuntu;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  margin-top: 20px;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
 }
 
 .input-group {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
+  display: inline-block;
   width: 100%;
 }
 
 .form-field {
-  display: flex;
-  flex-direction: column;
-  width: calc(50% - 10px);
-  min-width: 200px;
+  display: inline-block;
+  width: 45%;
+  vertical-align: top;
+  font-family: Ubuntu;
+  text-align: left;
 }
 
 .form-field label {
+  display: block;
   font-weight: bold;
   font-size: 13px;
-  margin-bottom: 4px;
-  font-family: Ubuntu;
   color: #333333;
 }
 
 .input-text {
+  width: 95%;
   font-size: 12px;
-  padding: 6px 8px;
+  padding: 6px;
   border-radius: 3px;
   border: 1px solid #262626;
-  outline: none;
   box-sizing: border-box;
-  transition: 0.25s;
 }
 
 .input-text:focus {
   border-color: #8688f3;
 }
 
-/* Botões sempre visíveis lado a lado */
+/* Botões */
 .input-btn {
   font-family: Ubuntu;
   font-size: 12px;
@@ -137,10 +131,10 @@
   border-radius: 6px;
   border: 1px solid #262626;
   cursor: pointer;
-  text-align: center;
-  transition: 0.3s all ease;
-  margin: 10px 5px 0 5px;
+  background-color: #ffffff;
+  color: #000000;
   display: inline-block;
+  margin-top: 10px;
 }
 
 .input-btn:hover {
@@ -149,45 +143,32 @@
   color: #ffffff;
 }
 
-/* --------------------------- Aba de Registros --------------------------- */
+/* Aba de registros */
 .table-wrapper {
-  width: 97%;
+  display: inline-block;
+  width: 100%;
   overflow-x: auto;
-  padding: 0 20px;
-  display: flex;
-  justify-content: center;
 }
 
 #myTable {
   font-family: Ubuntu;
-  min-width: 1000px;
-  width: 100%;
   border-collapse: collapse;
+  width: 100%;
+  min-width: 1000px;
 }
 
 #myTable thead {
   background-color: #721818;
   color: #ffffff;
-  font-family: Ubuntu;
   font-size: 14px;
   letter-spacing: 0.5px;
 }
 
-#myTable th {
-  padding: 12px 8px;
-  font-weight: 500;
-  text-align: center;
-}
-
-#myTable td,
-#myTable th {
-  border: 1px solid #dddddd;
-  padding: 8px;
-}
-
+#myTable th,
 #myTable td {
-  padding: 5px;
+  border: 1px solid #dddddd;
   text-align: center;
+  padding: 6px;
 }
 
 #myTable tr:nth-child(even) {
@@ -198,12 +179,9 @@
   background-color: #dddddd;
 }
 
-/* --------------------------- Ícones de Ação --------------------------- */
+/* Ícones de ação */
 .action-icons {
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-  align-items: center;
+  display: inline-block;
 }
 
 .remove-btn {
@@ -211,31 +189,4 @@
   background-color: transparent;
   cursor: pointer;
   font-size: 16px;
-  padding: 4px;
-}
-
-.remove-btn:hover {
-  opacity: 0.8;
-}
-
-/* --------------------------- Responsividade --------------------------- */
-@media screen and (max-width: 600px) {
-  .input-group {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .form-field {
-    width: 100%;
-    max-width: 300px;
-  }
-
-  .input-btn {
-    width: 100%;
-    max-width: 200px;
-  }
-
-  .table-wrapper {
-    padding: 0 10px;
-  }
 }

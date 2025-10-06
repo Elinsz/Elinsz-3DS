@@ -1,7 +1,7 @@
 let editRowId = null;
 
-// Ativa eventos de troca de abas ao carregar
 document.addEventListener('DOMContentLoaded', () => {
+  // Ativa troca de abas
   const links = document.querySelectorAll('.tab-link');
   links.forEach(link => {
     link.addEventListener('click', event => {
@@ -14,12 +14,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // Corrige campo de data se necessário
   const dataInput = document.getElementById('data');
   if (dataInput && dataInput.type !== 'date') {
-    dataInput.type = 'text'; // fallback para ambientes sem suporte
+    dataInput.type = 'text';
     dataInput.placeholder = 'dd/mm/aaaa';
   }
 });
 
-// Função para alternar entre abas
+// Troca de abas
 function showTab(tabId) {
   const tabs = document.querySelectorAll('.tab-content');
   const links = document.querySelectorAll('.tab-link');
@@ -37,7 +37,7 @@ function showTab(tabId) {
   });
 }
 
-// Função para limpar o formulário
+// Limpa formulário
 function clearForm() {
   const fields = [
     'codigo', 'data', 'nome', 'cpf', 'endereco', 'bairro',
@@ -54,7 +54,7 @@ function clearForm() {
   editRowId = null;
 }
 
-// Função para adicionar novo registro
+// Adiciona registro
 function addToTable() {
   const tbody = document.querySelector('#myTable tbody');
   const fields = {
@@ -106,7 +106,7 @@ function addToTable() {
   return false;
 }
 
-// Função para editar registro
+// Edita registro
 function editRow(button) {
   const row = button.closest('tr');
   if (!row) return;
@@ -118,48 +118,4 @@ function editRow(button) {
   document.getElementById('nome').value = row.cells[3].textContent;
   document.getElementById('cpf').value = row.cells[4].textContent;
   document.getElementById('endereco').value = row.cells[5].textContent;
-  document.getElementById('bairro').value = row.cells[6].textContent;
-  document.getElementById('cidade').value = row.cells[7].textContent;
-  document.getElementById('uf').value = row.cells[8].textContent;
-  document.getElementById('cep').value = row.cells[9].textContent;
-  document.getElementById('email').value = row.cells[10].textContent;
-  document.getElementById('fone1').value = row.cells[11].textContent;
-  document.getElementById('fone2').value = row.cells[12].textContent;
-
-  document.getElementById('add-btn').style.display = 'none';
-  document.getElementById('update-btn').style.display = 'inline-block';
-
-  showTab('form-tab');
-}
-
-// Função para atualizar registro existente
-function updateTable() {
-  if (!editRowId) return false;
-
-  const row = document.getElementById(editRowId);
-  if (!row) return false;
-
-  row.cells[1].textContent = document.getElementById('codigo').value.trim();
-  row.cells[2].textContent = document.getElementById('data').value.trim();
-  row.cells[3].textContent = document.getElementById('nome').value.trim();
-  row.cells[4].textContent = document.getElementById('cpf').value.trim();
-  row.cells[5].textContent = document.getElementById('endereco').value.trim();
-  row.cells[6].textContent = document.getElementById('bairro').value.trim();
-  row.cells[7].textContent = document.getElementById('cidade').value.trim();
-  row.cells[8].textContent = document.getElementById('uf').value.trim();
-  row.cells[9].textContent = document.getElementById('cep').value.trim();
-  row.cells[10].textContent = document.getElementById('email').value.trim();
-  row.cells[11].textContent = document.getElementById('fone1').value.trim();
-  row.cells[12].textContent = document.getElementById('fone2').value.trim();
-
-  clearForm();
-  showTab('table-tab');
-  return false;
-}
-
-// Função para remover registro
-function removeToTable(button) {
-  const row = button.closest('tr');
-  if (row) row.remove();
-  return false;
-}
+  document.getElementBy
