@@ -33,7 +33,8 @@ body {
 .tab-link {
   text-decoration: none;
   padding: 8px 16px;
-  border-radius: 6px;
+  border-radius: 3px;
+  border-radius: top;
   background-color: #d6d7f3;
   color: #333333;
   font-size: 14px;
