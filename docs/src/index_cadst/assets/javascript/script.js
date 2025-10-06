@@ -37,6 +37,7 @@ function addToTable() {
     return;
   }
 
+
   const row = tbody.insertRow();
   row.id = `row-${tbody.rows.length + 1}`;
   row.insertCell(0).textContent = tbody.rows.length + 1;
@@ -58,4 +59,6 @@ function editRow(button) {
   editRowId = row.id;
 
   ['codigo','data','nome','cpf','endereco','bairro','cidade','uf','cep','email','fone1','fone2']
-    .forEach((id, i) => document.getElementById(id).value = row.cells[i + 1].textContent
+    .forEach((id, i) => document.getElementById(id).value = row.cells[i + 1].textContent)
+}
+
