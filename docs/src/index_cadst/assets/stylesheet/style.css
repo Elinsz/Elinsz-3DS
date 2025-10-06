@@ -7,7 +7,7 @@
 /* --------------------------- Cabeçalho Principal --------------------------- */
 #nav {
   width: 100%;
-  background-color: rgba(134, 136, 243);
+  background-color: #721818;
   color: white;
   font-size: 2em;
   font-family: Ubuntu;
@@ -172,7 +172,7 @@
 }
 
 #myTable thead {
-  background-color: rgba(134, 136, 243);
+  background-color: #721818;
   color: white;
   font-family: Ubuntu;
   font-size: 14px;
