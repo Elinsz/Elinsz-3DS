@@ -8,7 +8,7 @@
 #nav {
   width: 100%;
   background-color: #721818;
-  color: white;
+  color: #ffffff;
   font-size: 2em;
   font-family: Ubuntu;
   text-align: center;
@@ -19,21 +19,14 @@
 }
 
 /* --------------------------- Navegação Secundária --------------------------- */
-/* #sub-nav {
-  width: 100%;
-  background-color: #eaeaea;
-  padding: 10px 20px;
-  position: sticky;
-  top: 10vh;
-  z-index: 9;
-} */
-
 #sub-nav {
   width: 100%;
   background-color: #eaeaea;
   box-sizing: border-box;
-  padding: 10px 5vw; /* 5vw de cada lado = 90vw total */
+  padding: 10px 5vw;
   z-index: 9;
+  position: sticky;
+  top: 10vh;
 }
 
 .tab-menu {
@@ -53,19 +46,20 @@
   text-decoration: none;
   padding: 8px 16px;
   border-radius: 6px;
-  background-color: rgba(134, 136, 243, 0.2);
-  color: #333;
+  background-color: #d6d7f3; /* rgba(134, 136, 243, 0.2) */
+  color: #333333;
   font-size: 14px;
   transition: background-color 0.3s ease;
+  text-transform: none;
 }
 
 .tab-link:hover {
-  background-color: rgba(134, 136, 243, 0.4);
+  background-color: #aeb0f3; /* rgba(134, 136, 243, 0.4) */
 }
 
 .tab-link.active {
-  background-color: rgba(134, 136, 243);
-  color: white;
+  background-color: #8688f3; /* rgba(134, 136, 243) */
+  color: #ffffff;
 }
 
 /* --------------------------- Área de Abas --------------------------- */
@@ -118,7 +112,7 @@
   font-size: 13px;
   margin-bottom: 4px;
   font-family: Ubuntu;
-  color: #333;
+  color: #333333;
 }
 
 .input-text {
@@ -132,7 +126,7 @@
 }
 
 .input-text:focus {
-  border-color: rgba(134, 136, 243);
+  border-color: #8688f3;
 }
 
 /* Botões sempre visíveis lado a lado */
@@ -152,7 +146,7 @@
 .input-btn:hover {
   background-color: #383838;
   border-color: #383838;
-  color: white;
+  color: #ffffff;
 }
 
 /* --------------------------- Aba de Registros --------------------------- */
@@ -173,10 +167,9 @@
 
 #myTable thead {
   background-color: #721818;
-  color: white;
+  color: #ffffff;
   font-family: Ubuntu;
   font-size: 14px;
-  /* text-transform: uppercase; */
   letter-spacing: 0.5px;
 }
 
@@ -188,7 +181,7 @@
 
 #myTable td,
 #myTable th {
-  border: 1px solid #ddd;
+  border: 1px solid #dddddd;
   padding: 8px;
 }
 
@@ -202,7 +195,7 @@
 }
 
 #myTable tr:hover {
-  background-color: #ddd;
+  background-color: #dddddd;
 }
 
 /* --------------------------- Ícones de Ação --------------------------- */
