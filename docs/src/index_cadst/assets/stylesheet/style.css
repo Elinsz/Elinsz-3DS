@@ -21,6 +21,7 @@ body {
 .tab-menu {
   display: flex;
   justify-content: left;
+  margin-left: 10px;
   list-style: none;
   padding: 0;
 }
