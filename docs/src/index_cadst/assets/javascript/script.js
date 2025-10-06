@@ -119,3 +119,4 @@ function editRow(button) {
   document.getElementById('cpf').value = row.cells[4].textContent;
   document.getElementById('endereco').value = row.cells[5].textContent;
   document.getElementBy
+}
