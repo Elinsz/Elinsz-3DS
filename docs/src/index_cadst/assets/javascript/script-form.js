@@ -15,13 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
     this.value = v.replace(/(\d{5})(\d{3})/, '$1-$2');
   });
 
-  // Celular (9 dígitos)
+  // Celular
   document.getElementById('celular').addEventListener('input', function () {
     let v = this.value.replace(/\D/g, '');
     this.value = v.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
   });
 
-  // Fone fixo (8 dígitos)
+  // Fone fixo
   document.getElementById('fone').addEventListener('input', function () {
     let v = this.value.replace(/\D/g, '');
     this.value = v.replace(/(\d{2})(\d{4})(\d{4})/, '($1) $2-$3');
@@ -36,13 +36,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Botão de calendário externo
+  // Abrir calendário invisível
   window.abrirCalendario = function (id) {
     const input = document.getElementById(id);
     const picker = document.createElement('input');
     picker.type = 'date';
-    picker.style.position = 'absolute';
+    picker.style.position = 'fixed';
     picker.style.opacity = 0;
+    picker.style.pointerEvents = 'none';
     picker.onchange = () => {
       const [ano, mes, dia] = picker.value.split('-');
       input.value = `${dia}/${mes}/${ano}`;
@@ -50,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     document.body.appendChild(picker);
     picker.focus();
+    picker.click();
   };
 
   // Botão Cadastrar

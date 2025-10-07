@@ -11,10 +11,11 @@
     <div id="input-data">
       <div class="input-group">
         <div class="form-field"><label for="codigo">Código</label><input id="codigo" class="input-text" /></div>
-        <div class="form-field date-field"><label for="data">Data</label>
+        <div class="form-field date-field">
+          <label for="data">Data</label>
           <div class="input-icon">
             <input id="data" class="input-text" placeholder="dd/mm/aaaa" maxlength="10" />
-            <button class="calendar-btn" onclick="abrirCalendario('data')">📅</button>
+            <span class="calendar-btn" onclick="abrirCalendario('data')">📅</span>
           </div>
         </div>
         <div class="form-field"><label for="nome">Nome</label><input id="nome" class="input-text" /></div>
