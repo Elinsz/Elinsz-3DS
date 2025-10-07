@@ -45,6 +45,25 @@ body {
   margin: 10px 5vw;
 }
 
+.date-field .input-icon {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.calendar-btn {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 0 6px;
+  line-height: 1;
+}
+
+.input-text {
+  height: 32px;
+}
+
 .input-icon {
   display: flex;
   align-items: center;
