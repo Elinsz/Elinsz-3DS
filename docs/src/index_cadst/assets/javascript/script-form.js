@@ -37,22 +37,35 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Abrir calendário invisível
-  window.abrirCalendario = function (id) {
+  function abrirCalendario(id) {
     const input = document.getElementById(id);
+
+    // Cria seletor de data visível
     const picker = document.createElement('input');
     picker.type = 'date';
-    picker.style.position = 'fixed';
-    picker.style.opacity = 0;
-    picker.style.pointerEvents = 'none';
+    picker.style.position = 'absolute';
+    picker.style.zIndex = 9999;
+    picker.style.left = input.getBoundingClientRect().left + 'px';
+    picker.style.top = input.getBoundingClientRect().bottom + window.scrollY + 'px';
+    picker.style.fontSize = '14px';
+
+    // Quando o usuário escolhe a data
     picker.onchange = () => {
       const [ano, mes, dia] = picker.value.split('-');
       input.value = `${dia}/${mes}/${ano}`;
       document.body.removeChild(picker);
     };
+
+    // Remove se perder o foco
+    picker.onblur = () => {
+      if (document.body.contains(picker)) {
+        document.body.removeChild(picker);
+      }
+    };
+
     document.body.appendChild(picker);
     picker.focus();
-    picker.click();
-  };
+  }
 
   // Botão Cadastrar
   document.getElementById('add-btn').addEventListener('click', () => {
