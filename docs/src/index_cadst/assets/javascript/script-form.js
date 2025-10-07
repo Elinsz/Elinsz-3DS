@@ -15,20 +15,28 @@ document.addEventListener('DOMContentLoaded', () => {
     this.value = v.replace(/(\d{5})(\d{3})/, '$1-$2');
   });
 
-  // Máscara telefone
-  ['fone1', 'fone2'].forEach(id => {
-    document.getElementById(id).addEventListener('input', function () {
-      let v = this.value.replace(/\D/g, '');
-      if (v.length <= 10) {
-        this.value = v.replace(/(\d{2})(\d{4})(\d{4})/, '($1) $2-$3');
-      } else {
-        this.value = v.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
-      }
-    });
+  // Celular (9 dígitos)
+  document.getElementById('celular').addEventListener('input', function () {
+    let v = this.value.replace(/\D/g, '');
+    this.value = v.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
   });
 
-  // Botões
+  // Fone fixo (8 dígitos)
+  document.getElementById('fone').addEventListener('input', function () {
+    let v = this.value.replace(/\D/g, '');
+    this.value = v.replace(/(\d{2})(\d{4})(\d{4})/, '($1) $2-$3');
+  });
+
+  // Validação ao cadastrar
   document.getElementById('add-btn').addEventListener('click', () => {
+    const celular = document.getElementById('celular').value;
+    const fone = document.getElementById('fone').value;
+
+    if (celular.length < 15 || fone.length < 14) {
+      alert('Preencha os campos de telefone corretamente.');
+      return;
+    }
+
     alert('Cadastro realizado com sucesso!');
     document.querySelectorAll('.input-text').forEach(input => input.value = '');
     document.getElementById('add-btn').classList.add('active-btn');
