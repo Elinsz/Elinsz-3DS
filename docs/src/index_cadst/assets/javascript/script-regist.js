@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
       uf: 'PR',
       cep: '83320-000',
       email: 'joao@email.com',
-      fone1: '(41) 99999-9999',
-      fone2: '(41) 98888-8888'
+      celular: '(41) 99999-9999',
+      fone: '(41) 98888-8888'
     }
   ];
 
@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
     row.insertCell(8).textContent = reg.uf;
     row.insertCell(9).textContent = reg.cep;
     row.insertCell(10).textContent = reg.email;
-    row.insertCell(11).textContent = reg.fone1;
-    row.insertCell(12).textContent = reg.fone2;
+    row.insertCell(11).textContent = reg.celular;
+    row.insertCell(12).textContent = reg.fone;
     row.insertCell(13).innerHTML = `
       <div class="action-icons">
         <button class="remove-btn" title="Editar">✏️</button>
