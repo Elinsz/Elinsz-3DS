@@ -28,7 +28,7 @@ body {
 /* Menu de abas */
 .tab-menu {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   list-style: none;
   margin: 0;
   padding: 0;
