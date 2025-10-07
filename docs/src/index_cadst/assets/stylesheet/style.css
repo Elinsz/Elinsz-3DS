@@ -64,7 +64,7 @@ body {
 .input-group {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  gap: 20px; /* espaçamento entre colunas e linhas */
   width: 100%;
 }
 
@@ -72,8 +72,6 @@ body {
   flex: 1 1 calc(50% - 10px);
   min-width: 250px;
   box-sizing: border-box;
-  margin-bottom: 10px;
-  padding-right: 10px; /* espaçamento entre colunas */
 }
 
 .form-field label {
@@ -95,7 +93,7 @@ body {
   display: flex;
   justify-content: flex-start;
   gap: 10px;
-  margin-top: 10px;
+  margin: 10px;
 }
 
 .input-btn {
@@ -168,12 +166,12 @@ body {
   .form-field {
     width: 100%;
     min-width: unset;
-    padding-right: 0;
   }
 
   .button-group {
     flex-direction: column;
     align-items: stretch;
+    margin: 10px 0;
   }
 
   .input-btn {
