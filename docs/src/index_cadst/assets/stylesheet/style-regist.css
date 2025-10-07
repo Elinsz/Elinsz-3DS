@@ -1,0 +1,55 @@
+body {
+  font-family: Ubuntu, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#table-tab {
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  padding: 10px;
+}
+
+#myTable {
+  width: 100%;
+  min-width: 1000px;
+  border-collapse: collapse;
+  box-sizing: border-box;
+}
+
+#myTable th {
+  background-color: #721818;
+  color: #ffffff;
+  padding: 6px;
+  text-align: center;
+}
+
+#myTable td {
+  padding: 6px;
+  border: 1px solid #dddddd;
+  text-align: center;
+}
+
+#myTable tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.action-icons {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}

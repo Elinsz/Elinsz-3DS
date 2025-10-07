@@ -1,9 +1,12 @@
+/* Reset básico */
 body {
   font-family: Ubuntu, sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #f9f9f9;
 }
 
+/* Cabeçalho principal */
 #nav {
   background-color: #721818;
   color: #ffffff;
@@ -13,6 +16,7 @@ body {
   line-height: 80px;
 }
 
+/* Submenu com botões de navegação */
 #sub-nav {
   background-color: #eaeaea;
   height: 50px;
@@ -21,6 +25,7 @@ body {
   box-sizing: border-box;
 }
 
+/* Menu de abas */
 .tab-menu {
   display: flex;
   justify-content: center;
@@ -33,13 +38,15 @@ body {
   margin: 0 10px;
 }
 
+/* Botões de navegação */
 .tab-link {
-  text-decoration: none;
   padding: 8px 16px;
   border-radius: 6px;
   background-color: #d6d7f3;
   color: #333333;
   font-size: 14px;
+  border: none;
+  cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
@@ -52,8 +59,39 @@ body {
   color: #ffffff;
 }
 
+/* Área do iframe */
 #content-frame {
   border: none;
   width: 100%;
   height: 600px;
+  display: block;
+  background-color: #ffffff;
+}
+
+/* Responsividade */
+@media screen and (max-width: 600px) {
+  #nav {
+    font-size: 1.5em;
+    height: 60px;
+    line-height: 60px;
+  }
+
+  #sub-nav {
+    height: auto;
+    padding: 10px;
+  }
+
+  .tab-menu {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tab-link {
+    width: 100%;
+    margin-bottom: 6px;
+  }
+
+  #content-frame {
+    height: 500px;
+  }
 }
