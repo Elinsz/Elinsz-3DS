@@ -62,7 +62,7 @@ body {
 
 .button-row {
   display: flex;
-  justify-content: flex-start;
+  justify-content: right;
   gap: 10px;
   margin: 10px 5vw;
 }
