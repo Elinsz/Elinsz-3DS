@@ -57,7 +57,7 @@ body {
 
 #form-tab {
   width: 100%;
-  /* padding: 10px 5vw; alinhado com sub-nav */
+  padding: 10px 5vw;
   box-sizing: border-box;
 }
 
@@ -73,6 +73,7 @@ body {
   min-width: 250px;
   box-sizing: border-box;
   margin-bottom: 10px;
+  padding-right: 10px; /* espaçamento entre colunas */
 }
 
 .form-field label {
@@ -114,7 +115,7 @@ body {
 
 #table-tab {
   width: 100%;
-  padding: 10px 5vw; /* mesma largura da sub-nav */
+  padding: 10px 5vw;
   box-sizing: border-box;
 }
 
@@ -157,6 +158,7 @@ body {
   cursor: pointer;
 }
 
+/* Responsividade para telas pequenas */
 @media screen and (max-width: 600px) {
   .input-group {
     flex-direction: column;
@@ -166,6 +168,7 @@ body {
   .form-field {
     width: 100%;
     min-width: unset;
+    padding-right: 0;
   }
 
   .button-group {
