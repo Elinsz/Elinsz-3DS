@@ -57,7 +57,7 @@ body {
 
 #form-tab {
   width: 100%;
-  padding: 10px 5vw; /* alinhado com sub-nav */
+  /* padding: 10px 5vw; alinhado com sub-nav */
   box-sizing: border-box;
 }
 
