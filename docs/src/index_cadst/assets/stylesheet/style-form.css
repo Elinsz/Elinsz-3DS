@@ -89,7 +89,7 @@ body {
   border-color: #8688f3;
 }
 
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
   .input-group {
     flex-direction: column;
   }
@@ -107,4 +107,4 @@ body {
   .input-btn {
     width: 100%;
   }
-}
+} */
