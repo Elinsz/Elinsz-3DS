@@ -40,7 +40,7 @@ body {
   display: flex;
   align-items: center;
   margin-top: 5px;
-  height: auto;
+  height: 25px;
 }
 
 /* Botões de navegação como links */
