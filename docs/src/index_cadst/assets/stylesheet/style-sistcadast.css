@@ -63,7 +63,9 @@ header, main, nav {
 /* Botões de navegação como links */
 .tab-link {
   display: inline-block;
-  padding: 8px 16px;
+  padding: 2px 12px;           /* Reduz altura visual */
+  height: 22px;                /* Altura fixa */
+  line-height: 22px;           /* Alinha texto verticalmente */
   border-radius: 6px;
   background-color: #d6d7f3;
   color: #333333;
@@ -72,6 +74,7 @@ header, main, nav {
   cursor: pointer;
   transition: background-color 0.3s ease;
   border: none;
+  box-sizing: border-box;
 }
 
 .tab-link:hover {
