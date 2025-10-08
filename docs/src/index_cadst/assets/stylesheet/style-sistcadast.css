@@ -37,6 +37,7 @@ body {
   display: flex;
   height: 20px;
   align-items: center;
+  margin-top: 5px;
 }
 
 .tab-menu div {
