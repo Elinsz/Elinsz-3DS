@@ -2,53 +2,44 @@ document.addEventListener('DOMContentLoaded', () => {
   const links = document.querySelectorAll('.tab-link');
   const iframe = document.getElementById('content-frame');
 
-      document.addEventListener("DOMContentLoaded", function () {
-          // Aguarda 100 milissegundos para atualizar o iframe
-          setTimeout(function () {
-              const iframe = document.getElementById("content-frame");
-              if (iframe) {
-                  // Atualiza o iframe recarregando a mesma URL
-                  iframe.src = iframe.src;
-              }
-          }, 3); // 3 milissegundos (ajuste conforme necessário)
-      });
+  // Restaura aba ativa do localStorage
+  const lastHref = localStorage.getItem('abaAtiva');
+  if (lastHref) {
+    const lastLink = Array.from(links).find(link => link.getAttribute('href') === lastHref);
+    if (lastLink) {
+      links.forEach(l => l.classList.remove('active'));
+      lastLink.classList.add('active');
+      iframe.setAttribute('src', lastHref);
+    }
+  }
 
+  // Evento de clique nas abas
+  links.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
 
-      document.addEventListener('DOMContentLoaded', function () {
-        const section = document.querySelector('section');
-        const iframe = document.querySelector('section iframe');
+      // Atualiza visual
+      links.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
 
-        closeBtn.addEventListener('click', function () {
-          section.style.marginLeft = '0px';
-          iframe.style.marginLeft = '0'; // Opcional, para ajustar alinhamento interno
-        });
+      // Atualiza iframe
+      const href = link.getAttribute('href');
+      iframe.setAttribute('src', href);
 
-        menuBtn.addEventListener('click', function () {
-          section.style.marginLeft = '0px';
-          /*iframe.style.marginLeft = '10px'; // Opcional*/
-        });
-      });
+      // Salva aba ativa
+      localStorage.setItem('abaAtiva', href);
+    });
+  });
 
-
-  // Define os caminhos das páginas
-    // const pages = {
-    //   form: 'index-form.html',
-    //   regist: 'index-regist.html'
-    // };
-
-  // Carrega a página inicial
-    // iframe.src = pages.form;
-
-    // links.forEach(link => {
-    //   link.addEventListener('click', () => {
-    //     // Atualiza visual
-    //     links.forEach(l => l.classList.remove('active'));
-    //     link.classList.add('active');
-
-    //     // Atualiza conteúdo do iframe
-    //     const pageKey = link.getAttribute('data-page');
-    //     iframe.src = pages[pageKey];
-    //   });
-    // });
-
+  // Ajusta altura do iframe dinamicamente
+  iframe.addEventListener('load', () => {
+    try {
+      const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+      const altura = iframeDoc.body.scrollHeight;
+      iframe.style.height = altura + 'px';
+    } catch (err) {
+      // Em alguns casos cross-origin, não é possível acessar o conteúdo
+      console.warn('Não foi possível ajustar a altura do iframe:', err);
+    }
+  });
 });
