@@ -40,14 +40,14 @@ body {
   display: flex;
   align-items: center;
   margin-top: 5px;
-  height: 25px;
+  height: 22px;
 }
 
 /* Botões de navegação como links */
 .tab-link {
   display: inline-block;
   padding: 8px 16px;
-  border-radius: 6px;
+  border-radius: 4px;
   background-color: #d6d7f3;
   color: #333333;
   font-size: 14px;
