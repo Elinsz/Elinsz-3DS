@@ -11,13 +11,10 @@
   <div id="nav">Sistema de Cadastro</div>
 
   <div id="sub-nav">
-    <ul class="tab-menu">
-      <!-- <li><button class="tab-link active" data-page="form">Cadastro</button></li>
-      <li><button class="tab-link" data-page="regist">Registros</button></li> -->
-
-      <li><button class="tab-link active" href="../index_cadst/index-form.html" target="conteudo">Cadastro</button></li>
-      <li><button class="tab-link"  href="../index_cadst/index-regist.html" target="conteudo">Registros</button></li>
-    </ul>
+    <div class="tab-menu">
+      <div><a class="tab-link active" href="../index_cadst/index-form.html" target="conteudo">Cadastro</a></div>
+      <div><a class="tab-link" href="../index_cadst/index-regist.html" target="conteudo">Registros</a></div>
+    </div>
   </div>
 
   <section>
@@ -30,7 +27,6 @@
       const links = document.querySelectorAll('.tab-link');
       const iframe = document.getElementById('content-frame');
 
-      // Restaura aba ativa do localStorage
       const lastHref = localStorage.getItem('abaAtiva');
       if (lastHref) {
         const lastLink = Array.from(links).find(link => link.getAttribute('href') === lastHref);
@@ -41,25 +37,17 @@
         }
       }
 
-      // Evento de clique nas abas
       links.forEach(link => {
         link.addEventListener('click', e => {
           e.preventDefault();
-
-          // Atualiza visual
           links.forEach(l => l.classList.remove('active'));
           link.classList.add('active');
-
-          // Atualiza iframe
           const href = link.getAttribute('href');
           iframe.setAttribute('src', href);
-
-          // Salva aba ativa
           localStorage.setItem('abaAtiva', href);
         });
       });
 
-      // Ajusta altura do iframe dinamicamente (se permitido)
       iframe.addEventListener('load', () => {
         try {
           const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
@@ -70,7 +58,6 @@
         }
       });
     });
-
 
   </script>
 </body>

@@ -25,17 +25,15 @@ body {
   box-sizing: border-box;
 }
 
-/* Menu de abas */
+/* Menu de abas com <div><a> */
 .tab-menu {
   display: flex;
-  justify-content: flex-start;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  gap: 10px;
+  align-items: center;
 }
 
-.tab-menu li {
-  margin: 0 10px;
+.tab-menu div {
+  display: inline-block;
 }
 
 /* Botões de navegação como links */
@@ -95,9 +93,14 @@ section {
     align-items: center;
   }
 
+  .tab-menu div {
+    width: 100%;
+  }
+
   .tab-link {
     width: 100%;
     margin-bottom: 6px;
+    text-align: center;
   }
 
   #content-frame {
