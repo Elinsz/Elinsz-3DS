@@ -4,25 +4,36 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f9f9f9;
+  overflow: hidden; /* evita scroll duplo */
 }
 
-/* Cabeçalho principal */
+/* Cabeçalho principal fixo */
 #nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   background-color: #721818;
   color: #ffffff;
   font-size: 2em;
   text-align: center;
   height: 80px;
   line-height: 80px;
+  z-index: 1000;
 }
 
-/* Submenu com botões de navegação */
+/* Submenu fixo abaixo do cabeçalho */
 #sub-nav {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 100%;
   background-color: #eaeaea;
   height: 50px;
   line-height: 50px;
   padding: 0 5vw;
   box-sizing: border-box;
+  z-index: 999;
 }
 
 /* Menu de abas com <div><a> */
@@ -68,9 +79,12 @@ body {
 
 /* Container do iframe */
 section {
-  height: calc(100vh - 130px); /* 80px nav + 50px sub-nav */
+  position: absolute;
+  top: 130px; /* 80px nav + 50px sub-nav */
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 130px);
   background-color: #ffffff;
-  display: block;
   overflow: hidden;
 }
 
@@ -92,6 +106,7 @@ section {
   }
 
   #sub-nav {
+    top: 60px;
     height: auto;
     padding: 10px;
   }
@@ -112,10 +127,7 @@ section {
   }
 
   section {
-    height: calc(100vh - 120px); /* Ajustado para mobile */
-  }
-
-  #content-frame {
-    height: 100%;
+    top: 110px; /* 60px nav + ~50px sub-nav */
+    height: calc(100vh - 110px);
   }
 }
