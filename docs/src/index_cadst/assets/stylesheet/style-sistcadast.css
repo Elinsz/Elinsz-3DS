@@ -29,6 +29,7 @@ body {
 /* Menu de abas com <div><a> */
 .tab-menu {
   display: flex;
+  height: 20px;
   gap: 10px;
   align-items: center;
 }
@@ -40,7 +41,7 @@ body {
 /* Botões de navegação como links */
 .tab-link {
   display: inline-block;
-  padding: 8px 8px;
+  padding: 8px 16px;
   border-radius: 6px;
   background-color: #d6d7f3;
   color: #333333;
