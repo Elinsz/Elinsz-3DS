@@ -7,60 +7,38 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="UTF-8" ></script>
   <!-- <script src="assets/javascript/script-sistcadast.js" defer></script> -->
 </head>
-<body>
-  
-  <div id="nav">Sistema de Cadastro</div>
+  <body>
 
-  <div id="sub-nav">
-    <div class="tab-menu">
-      <div><a class="tab-link active" href="../index_cadst/index-form.html" target="conteudo">Cadastro</a></div>
-      <div><a class="tab-link" href="../index_cadst/index-regist.html" target="conteudo">Registros</a></div>
-    </div>
-  </div>
+    <header>
+      <main>
+        <nav>
+          <div class="side-bar logo-details active">
 
-  <section>
-    <iframe id="content-frame" frameborder="0" width="100%" height="600px" src="../../abertura.html" name="conteudo"></iframe>
-  </section>
+            <div class="nav-links">
+              <div id="nav">Sistema de Cadastro</div>
+              <div id="sub-nav">
+                <div class="tab-menu">
+                  <div><a class="tab-link active" href="../index_cadst/index-form.html" target="conteudo">Cadastro</a></div>
+                  <div><a class="tab-link" href="../index_cadst/index-regist.html" target="conteudo">Registros</a></div>
+                </div>
+              </div>
+            </div>
 
+          </div>
+        </nav>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const links = document.querySelectorAll('.tab-link');
-      const iframe = document.getElementById('content-frame');
+        <section>
+          <iframe id="content-frame" frameborder="0" width="100%" height="600px" src="../../abertura.html" name="conteudo"></iframe>
+        </section>
 
-      const lastHref = localStorage.getItem('abaAtiva');
-      if (lastHref) {
-        const lastLink = Array.from(links).find(link => link.getAttribute('href') === lastHref);
-        if (lastLink) {
-          links.forEach(l => l.classList.remove('active'));
-          lastLink.classList.add('active');
-          iframe.setAttribute('src', lastHref);
-        }
-      }
+      </main>
+    </header>
 
-      links.forEach(link => {
-        link.addEventListener('click', e => {
-          e.preventDefault();
-          links.forEach(l => l.classList.remove('active'));
-          link.classList.add('active');
-          const href = link.getAttribute('href');
-          iframe.setAttribute('src', href);
-          localStorage.setItem('abaAtiva', href);
-        });
-      });
+    <script src="assets/javascript/script-sistcadast.js""></script>
 
-      iframe.addEventListener('load', () => {
-        try {
-          const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-          const altura = iframeDoc.body.scrollHeight;
-          iframe.style.height = altura + 'px';
-        } catch (err) {
-          console.warn('Não foi possível ajustar a altura do iframe:', err);
-        }
-      });
-    });
+    <!-- <script>
+    </script> -->
 
-  </script>
-</body>
+  </body>
 
 </html>
