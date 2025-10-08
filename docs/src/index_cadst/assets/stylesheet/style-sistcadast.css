@@ -1,11 +1,4 @@
 /* Reset básico */
-  *{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-
 body {
   font-family: Ubuntu, sans-serif;
   margin: 0;
@@ -13,15 +6,9 @@ body {
   background-color: #f9f9f9;
 }
 
-main{
-  width: 100%;
-  min-height: 100vh;
-  background-color: #ffffff;
-  /*background: radial-gradient(610px at 5.2% 51.6%, rgb(5, 8, 114) 0%, rgb(7, 3, 53) 97.5%);*/
-}
 
 /* Cabeçalho principal */
-main .nav {
+#nav {
   background-color: #721818;
   color: #ffffff;
   font-size: 2em;
@@ -31,7 +18,7 @@ main .nav {
 }
 
 /* Submenu com botões de navegação */
-main .sub-nav {
+#sub-nav {
   background-color: #eaeaea;
   height: 50px;
   line-height: 50px;
@@ -40,18 +27,18 @@ main .sub-nav {
 }
 
 /* Menu de abas com <div><a> */
-main .tab-menu {
+.tab-menu {
   display: flex;
   gap: 10px;
   align-items: center;
 }
 
-main .tab-menu div {
+.tab-menu div {
   display: inline-block;
 }
 
 /* Botões de navegação como links */
-main .tab-link {
+.tab-link {
   display: inline-block;
   padding: 8px 16px;
   border-radius: 6px;
@@ -64,17 +51,17 @@ main .tab-link {
   border: none;
 }
 
-main .tab-link:hover {
+.tab-link:hover {
   background-color: #aeb0f3;
 }
 
-main .tab-link.active {
+.tab-link.active {
   background-color: #8688f3;
   color: #ffffff;
 }
 
 /* Área do iframe */
-main .content-frame {
+#content-frame {
   border: none;
   width: 100%;
   height: 600px;
@@ -83,7 +70,7 @@ main .content-frame {
 }
 
 /* Container do iframe */
-main .section {
+section {
   height: 95vh;
   background-color: #ffffff;
   display: block;
@@ -91,13 +78,13 @@ main .section {
 
 /* Responsividade */
 @media screen and (max-width: 600px) {
-  .nav {
+  #nav {
     font-size: 1.5em;
     height: 60px;
     line-height: 60px;
   }
 
-  .sub-nav {
+  #sub-nav {
     height: auto;
     padding: 10px;
   }
@@ -117,7 +104,7 @@ main .section {
     text-align: center;
   }
 
-  .content-frame {
+  #content-frame {
     height: 500px;
   }
 }
