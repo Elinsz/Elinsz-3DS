@@ -28,7 +28,7 @@ body {
 /* Menu de abas */
 .tab-menu {
   display: flex;
-  justify-content: left;
+  justify-content: flex-start;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -38,16 +38,18 @@ body {
   margin: 0 10px;
 }
 
-/* Botões de navegação */
+/* Botões de navegação como links */
 .tab-link {
+  display: inline-block;
   padding: 8px 16px;
   border-radius: 6px;
   background-color: #d6d7f3;
   color: #333333;
   font-size: 14px;
-  border: none;
+  text-decoration: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  border: none;
 }
 
 .tab-link:hover {
@@ -60,31 +62,19 @@ body {
 }
 
 /* Área do iframe */
-    /* #content-frame {
-      border: none;
-      width: 100%;
-      height: 600px;
-      display: block;
-      background-color: #ffffff;
-    } */
+#content-frame {
+  border: none;
+  width: 100%;
+  height: 600px;
+  display: block;
+  background-color: #ffffff;
+}
 
+/* Container do iframe */
 section {
-  /* padding: 5px; */
   height: 95vh;
   background-color: #ffffff;
   display: block;
-
-}
-
-section iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  /* padding-left: 76px; */
-}
-
-section.shift {
-margin-left: -2;
 }
 
 /* Responsividade */

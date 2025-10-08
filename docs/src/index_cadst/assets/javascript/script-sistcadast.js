@@ -31,14 +31,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Ajusta altura do iframe dinamicamente
+  // Ajusta altura do iframe dinamicamente (se permitido)
   iframe.addEventListener('load', () => {
     try {
       const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
       const altura = iframeDoc.body.scrollHeight;
       iframe.style.height = altura + 'px';
     } catch (err) {
-      // Em alguns casos cross-origin, não é possível acessar o conteúdo
       console.warn('Não foi possível ajustar a altura do iframe:', err);
     }
   });
