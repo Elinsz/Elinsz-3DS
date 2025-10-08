@@ -40,7 +40,7 @@ body {
 /* Botões de navegação como links */
 .tab-link {
   display: inline-block;
-  padding: 8px 16px;
+  padding: 8px 8px;
   border-radius: 6px;
   background-color: #d6d7f3;
   color: #333333;
