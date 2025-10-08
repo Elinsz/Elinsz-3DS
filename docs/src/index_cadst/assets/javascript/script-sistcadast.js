@@ -2,16 +2,33 @@ document.addEventListener('DOMContentLoaded', () => {
   const links = document.querySelectorAll('.tab-link');
   const iframe = document.getElementById('content-frame');
 
-        document.addEventListener("DOMContentLoaded", function () {
-            // Aguarda 100 milissegundos para atualizar o iframe
-            setTimeout(function () {
-                const iframe = document.getElementById("content-frame");
-                if (iframe) {
-                    // Atualiza o iframe recarregando a mesma URL
-                    iframe.src = iframe.src;
-                }
-            }, 3); // 3 milissegundos (ajuste conforme necessário)
+      document.addEventListener("DOMContentLoaded", function () {
+          // Aguarda 100 milissegundos para atualizar o iframe
+          setTimeout(function () {
+              const iframe = document.getElementById("content-frame");
+              if (iframe) {
+                  // Atualiza o iframe recarregando a mesma URL
+                  iframe.src = iframe.src;
+              }
+          }, 3); // 3 milissegundos (ajuste conforme necessário)
+      });
+
+
+      document.addEventListener('DOMContentLoaded', function () {
+        const section = document.querySelector('section');
+        const iframe = document.querySelector('section iframe');
+
+        closeBtn.addEventListener('click', function () {
+          section.style.marginLeft = '0px';
+          iframe.style.marginLeft = '0'; // Opcional, para ajustar alinhamento interno
         });
+
+        menuBtn.addEventListener('click', function () {
+          section.style.marginLeft = '0px';
+          /*iframe.style.marginLeft = '10px'; // Opcional*/
+        });
+      });
+
 
   // Define os caminhos das páginas
     // const pages = {
