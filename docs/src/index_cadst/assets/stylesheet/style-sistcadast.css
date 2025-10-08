@@ -65,7 +65,7 @@ header, main, nav {
   display: inline-block;
   padding: 2px 12px;           /* Reduz altura visual */
   height: 22px;                /* Altura fixa */
-  /* line-height: 22px;           Alinha texto verticalmente */
+  line-height: 22px;           /*Alinha texto verticalmente */
   align-items: center;
   border-radius: 6px;
   background-color: #d6d7f3;
