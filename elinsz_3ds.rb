@@ -8,7 +8,7 @@
 # =========================
 
 require 'sketchup.rb'
-# require_relative 'docs/interface_loader'
+require_relative 'docs/interface_loader'
 #require_relative 'docs/SKUI/painel_componentes'
 # require 'fileutils'
 # require_relative 'ActivationDialog'  # Adiciona o require da ActivationDialog.rb
@@ -59,8 +59,8 @@ module EIS_Extensions
           super "Elinsz 3DS", false, "Elinsz 3DS", 750, 600, 100, 100, true
 
           # Set HTML UI file for WebDialog
-          ui_loc = File.join( @base_dir , "index.html" )
-          # ui_loc = EIS_Extensions::ELINSZ3DS::InterfaceLoader.html_path
+          # ui_loc = File.join( @base_dir , "index.html" )
+          ui_loc = EIS_Extensions::ELINSZ3DS::InterfaceLoader.html_path
           set_file( ui_loc )
           navigation_buttons_enabled = false
           min_width = 500
