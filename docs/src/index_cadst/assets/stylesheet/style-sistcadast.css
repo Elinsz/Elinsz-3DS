@@ -7,7 +7,13 @@ body {
   overflow: hidden; /* evita scroll duplo */
 }
 
-/* Cabeçalho principal fixo */
+/* Estrutura principal */
+header, main, nav {
+  margin: 0;
+  padding: 0;
+}
+
+/* Cabeçalho fixo */
 #nav {
   position: fixed;
   top: 0;
@@ -51,14 +57,14 @@ body {
   display: flex;
   align-items: center;
   margin-top: 5px;
-  height: 22px;
+  height: auto;
 }
 
 /* Botões de navegação como links */
 .tab-link {
   display: inline-block;
   padding: 8px 16px;
-  border-radius: 4px;
+  border-radius: 6px;
   background-color: #d6d7f3;
   color: #333333;
   font-size: 14px;
@@ -77,7 +83,7 @@ body {
   color: #ffffff;
 }
 
-/* Container do iframe */
+/* Área do conteúdo */
 section {
   position: absolute;
   top: 130px; /* 80px nav + 50px sub-nav */
@@ -88,7 +94,7 @@ section {
   overflow: hidden;
 }
 
-/* Área do iframe */
+/* Iframe ajustado */
 #content-frame {
   width: 100%;
   height: 100%;
