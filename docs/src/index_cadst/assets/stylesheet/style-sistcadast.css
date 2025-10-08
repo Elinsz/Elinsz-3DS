@@ -60,13 +60,13 @@ body {
 }
 
 /* Área do iframe */
-#content-frame {
-  border: none;
-  width: 100%;
-  height: 600px;
-  display: block;
-  background-color: #ffffff;
-}
+    /* #content-frame {
+      border: none;
+      width: 100%;
+      height: 600px;
+      display: block;
+      background-color: #ffffff;
+    } */
 
 section {
   padding: 5px;
