@@ -1,35 +1,32 @@
 document.addEventListener('DOMContentLoaded', () => {
-        const links = document.querySelectorAll('.tab-link');
-        const iframe = document.getElementById('content-frame');
+  const links = document.querySelectorAll('.tab-link');
+  const iframe = document.getElementById('content-frame');
 
-        const lastHref = localStorage.getItem('abaAtiva');
-        if (lastHref) {
-          const lastLink = Array.from(links).find(link => link.getAttribute('href') === lastHref);
-          if (lastLink) {
-            links.forEach(l => l.classList.remove('active'));
-            lastLink.classList.add('active');
-            iframe.setAttribute('src', lastHref);
-          }
-        }
+  // Restaura aba ativa
+  const lastHref = localStorage.getItem('abaAtiva');
+  if (lastHref && iframe) {
+    iframe.src = lastHref;
+    links.forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === lastHref);
+    });
+  }
 
-        links.forEach(link => {
-          link.addEventListener('click', e => {
-            e.preventDefault();
-            links.forEach(l => l.classList.remove('active'));
-            link.classList.add('active');
-            const href = link.getAttribute('href');
-            iframe.setAttribute('src', href);
-            localStorage.setItem('abaAtiva', href);
-          });
-        });
+  // Intercepta cliques e força troca no iframe
+  links.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault(); // impede navegação padrão
 
-        iframe.addEventListener('load', () => {
-          try {
-            const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-            const altura = iframeDoc.body.scrollHeight;
-            iframe.style.height = altura + 'px';
-          } catch (err) {
-            console.warn('Não foi possível ajustar a altura do iframe:', err);
-          }
-        });
-      });
+      const href = link.getAttribute('href');
+      if (iframe) {
+        iframe.setAttribute('src', href);
+      }
+
+      // Atualiza visual
+      links.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+
+      // Salva aba ativa
+      localStorage.setItem('abaAtiva', href);
+    });
+  });
+});
