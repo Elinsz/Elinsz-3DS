@@ -89,6 +89,90 @@ body {
   border-color: #8688f3;
 }
 
+/*==============       Cabeçalho ============================
+
+
+/* Estrutura principal */
+header, main, nav {
+  margin: 0;
+  padding: 0;
+}
+
+/* Cabeçalho fixo */
+#nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #721818;
+  color: #ffffff;
+  font-size: 2em;
+  text-align: center;
+  height: 80px;
+  line-height: 80px;
+  z-index: 1000;
+}
+
+/* Submenu fixo abaixo do cabeçalho */
+#sub-nav {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  background-color: #eaeaea;
+  height: 50px;
+  line-height: 50px;
+  padding: 0 5vw;
+  box-sizing: border-box;
+  z-index: 999;
+}
+
+/* Menu de abas com <div><a> */
+.tab-menu {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.tab-menu div {
+  display: inline-block;
+}
+
+.tab-menu a {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+  height: auto;
+}
+
+/* Botões de navegação como links */
+.tab-link {
+  display: inline-block;
+  padding: 6px 10px;           /*Reduz altura visual
+  height: 22px;                /* Altura fixa */
+  line-height: 22px;           /*Alinha texto verticalmente */
+  align-items: center;
+  border-radius: 6px;
+  background-color: #d6d7f3;
+  color: #333333;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: none;
+  box-sizing: border-box;
+}
+
+.tab-link:hover {
+  background-color: #aeb0f3;
+}
+
+.tab-link.active {
+  background-color: #8688f3;
+  color: #ffffff;
+}
+
+
 /* @media screen and (max-width: 600px) {
   .input-group {
     flex-direction: column;
