@@ -114,6 +114,37 @@ tbody tr:hover {
   background-color: #f1f1f1;
 }
 
+/* Ícones de ação */
+.action-icons {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-start;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.remove-btn {
+  font-size: 16px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.remove-btn:hover {
+  background-color: #f0f0f0;
+}
+
+.remove-btn[title="Editar"] {
+  color: #2a7ae2;
+}
+
+.remove-btn[title="Excluir"] {
+  color: #d11a2a;
+}
+
 /* Responsividade */
 @media screen and (max-width: 768px) {
   .tab-menu {
@@ -136,5 +167,10 @@ tbody tr:hover {
 
   th, td {
     padding: 6px 8px;
+  }
+
+  .action-icons {
+    flex-direction: row;
+    justify-content: center;
   }
 }
