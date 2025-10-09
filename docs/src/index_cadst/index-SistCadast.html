@@ -33,10 +33,21 @@
 
       </main>
     </header>
-    <script src="assets/javascript/script-sistcadast.js""></script>
+    <!-- <script src="assets/javascript/script-sistcadast.js""></script> -->
 
-    <!-- <script>
-    </script> -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Aguarda 100 milissegundos para atualizar o iframe
+            setTimeout(function () {
+                const iframe = document.getElementById("content-frame");
+                if (iframe) {
+                    // Atualiza o iframe recarregando a mesma URL
+                    iframe.src = iframe.src;
+                }
+            }, 3); // 3 milissegundos (ajuste conforme necessário)
+        });
+
+    </script>
 
   </body>
 

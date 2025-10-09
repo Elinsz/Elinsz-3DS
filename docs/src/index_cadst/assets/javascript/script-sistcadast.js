@@ -16,10 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
     link.addEventListener('click', e => {
       e.preventDefault(); // impede navegação padrão
 
-      // const href = link.getAttribute('href');
-      // if (iframe) {
-      //   iframe.setAttribute('src', href);
-      // }
+      const href = link.getAttribute('href');
+      if (iframe) {
+        iframe.setAttribute('src', href);
+      }
 
       // Atualiza visual
       links.forEach(l => l.classList.remove('active'));
