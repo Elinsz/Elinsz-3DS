@@ -126,7 +126,7 @@ body {
 
 /* Botões de ação */
 .button-row {
-  margin-top: 30px;
+  margin-top: 20px;
   display: flex;
   gap: 10px;
 }
