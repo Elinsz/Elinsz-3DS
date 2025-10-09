@@ -92,7 +92,7 @@ body {
 table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 12px;
+  font-size: 1px;
   background-color: #fff;
 }
 
@@ -100,8 +100,15 @@ thead {
   background-color: #ddd;
 }
 
+/* th, td {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  text-align: left;
+} */
+
 th, td {
   padding: 6px 10px;
+  border: 1px solid #ccc;
   height: 28px;         /* altura mínima da linha */
   line-height: 1.4;     /* espaçamento interno do texto */
   vertical-align: middle;
