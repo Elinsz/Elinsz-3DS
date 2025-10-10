@@ -19,7 +19,7 @@ body {
   color: #ffffff;
   font-size: clamp(1.4em, 2vw, 1.8em);
   text-align: center;
-  line-height: 60px;
+  line-height: 50px;
   z-index: 1000;
 }
 
