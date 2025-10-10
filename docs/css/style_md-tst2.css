@@ -97,9 +97,9 @@
 
   .nav-links {
     max-height: calc(100vh - 130px); /* Altura máxima do contêiner ajustada para evitar sobreposição */
-    overflow-y: auto; /* Ativa a barra de rolagem vertical */
-    padding-bottom: 20px; /* Espaço extra no final */
-    overflow-x: hidden;
+    /* overflow-y: auto; Ativa a barra de rolagem vertical */
+    padding-bottom: 50px; /* Espaço extra no final */
+    /* overflow-x: hidden; */
     /* transition: 0.5s ease;
     transition-property: left; */
   }
