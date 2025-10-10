@@ -8,6 +8,11 @@ body {
   font-size: clamp(13px, 1.5vw, 16px);
 }
 
+.side-bar{
+  height: 100vh;
+  width: 100%;
+}
+
 /* Cabeçalho fixo */
 #nav {
   position: fixed;
