@@ -127,7 +127,7 @@ body {
 /* Botões de ação */
 .button-row {
   display: flex;
-  flex-direction: row;       /* garante que fiquem lado a lado */
+  /* flex-direction: row;       garante que fiquem lado a lado */
   justify-content: flex-start;
   align-items: center;
   gap: 10px;
