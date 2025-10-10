@@ -51,7 +51,6 @@ body {
 .tab-link {
   display: inline-block;
   padding: clamp(2px, 0.5vw, 6px) clamp(10px, 1vw, 12px);
-  height: auto;
   border-radius: 6px;
   background-color: #d6d7f3;
   color: #333333;
@@ -111,14 +110,24 @@ label {
   margin-bottom: 4px;
 }
 
+/* Input base */
 .input-text {
   font-size: clamp(12px, 1.5vw, 14px);
   padding: clamp(4px, 1vw, 6px) clamp(8px, 2vw, 10px);
   border: 1px solid #ccc;
   border-radius: 4px;
-  width: 100%;
   box-sizing: border-box;
+  width: auto;
+  max-width: 100%;
 }
+
+/* Largura proporcional por faixa de caracteres */
+.input-xs { width: 50px; }     /* até 2 caracteres */
+.input-sm { width: 100px; }    /* até 10 caracteres */
+.input-md { width: 160px; }    /* até 20 caracteres */
+.input-lg { width: 220px; }    /* até 30 caracteres */
+.input-xl { width: 280px; }    /* até 40+ caracteres */
+.input-xxl { width: 340px; }   /* até 60+ caracteres */
 
 /* Campo com ícone de calendário */
 .date-field .input-icon {
