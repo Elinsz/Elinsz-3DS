@@ -195,30 +195,26 @@ body {
 
 /* Responsividade */
 @media screen and (max-width: 368px) {
-  .tab-menu {
-    flex-direction: column;
+  body {
+    font-size: 14px;
+  }
+
+  .input-text {
+    font-size: 12px;
+    padding: 4px 6px;
+  }
+
+  label {
+    font-size: 12px;
   }
 
   .tab-link {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 6px;
+    font-size: 12px;
+    padding: 2px 8px;
   }
 
-  .input-group {
-    flex-direction: column;
-  }
-
-  .col-esquerda,
-  .col-direita {
-    width: 100%;
-  }
-
-  #form-tab {
-    padding: 10px;
-  }
-
-  .button-row {
-    flex-direction: column;
+  #nav {
+    font-size: 1.4em;
   }
 }
+
