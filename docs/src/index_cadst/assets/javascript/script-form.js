@@ -1,36 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Máscaras de entrada
-  const formatInput = (id, pattern) => {
+  const formatInput = (id, formatFn) => {
     const input = document.getElementById(id);
     input.addEventListener('input', () => {
       let v = input.value.replace(/\D/g, '');
-      input.value = v.replace(pattern.regex, pattern.format);
+      input.value = formatFn(v);
     });
   };
 
-  formatInput('cpf', {
-    regex: v => v.length <= 11
-      ? /(\d{3})(\d{3})(\d{3})(\d{2})/
-      : /(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/,
-    format: v => v.length <= 11
+  formatInput('cpf', v => {
+    return v.length <= 11
       ? v.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4')
-      : v.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, '$1.$2.$3/$4-$5')
+      : v.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, '$1.$2.$3/$4-$5');
   });
 
-  formatInput('cep', {
-    regex: /(\d{5})(\d{3})/,
-    format: '$1-$2'
-  });
-
-  formatInput('celular', {
-    regex: /(\d{2})(\d{5})(\d{4})/,
-    format: '($1) $2-$3'
-  });
-
-  formatInput('fone', {
-    regex: /(\d{2})(\d{4})(\d{4})/,
-    format: '($1) $2-$3'
-  });
+  formatInput('cep', v => v.replace(/(\d{5})(\d{3})/, '$1-$2'));
+  formatInput('celular', v => v.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3'));
+  formatInput('fone', v => v.replace(/(\d{2})(\d{4})(\d{4})/, '($1) $2-$3'));
 
   // Data com barra automática
   const dataInput = document.getElementById('data');
@@ -76,6 +62,23 @@ document.addEventListener('DOMContentLoaded', () => {
     picker.focus();
   };
 
+  // Preencher formulário se estiver editando
+  const indiceEdicao = localStorage.getItem('registroEditando');
+  if (indiceEdicao !== null) {
+    const registros = JSON.parse(localStorage.getItem('registros')) || [];
+    const dados = registros[indiceEdicao];
+
+    if (dados) {
+      Object.keys(dados).forEach(id => {
+        const campo = document.getElementById(id);
+        if (campo) campo.value = dados[id];
+      });
+
+      document.getElementById('add-btn').style.display = 'none';
+      document.getElementById('update-btn').style.display = 'inline-block';
+    }
+  }
+
   // Botão Cadastrar
   document.getElementById('add-btn').addEventListener('click', () => {
     const campos = [
@@ -107,8 +110,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Botão Atualizar
   document.getElementById('update-btn').addEventListener('click', () => {
-    alert('Cadastro atualizado com sucesso!');
-    limparCampos();
+    const campos = [
+      'codigo', 'nome', 'email', 'cpf', 'celular', 'fone',
+      'data', 'endereco', 'bairro', 'cep', 'cidade', 'uf'
+    ];
+
+    const dadosAtualizados = {};
+    campos.forEach(id => {
+      dadosAtualizados[id] = document.getElementById(id).value.trim();
+    });
+
+    const registros = JSON.parse(localStorage.getItem('registros')) || [];
+    const indice = parseInt(localStorage.getItem('registroEditando'), 10);
+
+    if (!isNaN(indice) && registros[indice]) {
+      registros[indice] = dadosAtualizados;
+      localStorage.setItem('registros', JSON.stringify(registros));
+      localStorage.removeItem('registroEditando');
+      alert('Cadastro atualizado com sucesso!');
+      limparCampos();
+      document.getElementById('update-btn').style.display = 'none';
+      document.getElementById('add-btn').style.display = 'inline-block';
+    } else {
+      alert('Erro ao atualizar registro.');
+    }
   });
 
   function limparCampos() {

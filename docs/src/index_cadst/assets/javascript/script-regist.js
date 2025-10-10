@@ -49,5 +49,11 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.setItem('registros', JSON.stringify(registros));
       row.remove();
     });
+
+    // Botão editar
+    actionCell.querySelector('[title="Editar"]').addEventListener('click', () => {
+      localStorage.setItem('registroEditando', index);
+      window.location.href = '../index_cadst/index-form.html';
+    });
   });
 });
