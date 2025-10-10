@@ -64,6 +64,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Preencher formulário se estiver editando
   const indiceEdicao = localStorage.getItem('registroEditando');
+  const addBtn = document.getElementById('add-btn');
+  const updateBtn = document.getElementById('update-btn');
+
   if (indiceEdicao !== null) {
     const registros = JSON.parse(localStorage.getItem('registros')) || [];
     const dados = registros[indiceEdicao];
@@ -74,13 +77,17 @@ document.addEventListener('DOMContentLoaded', () => {
         if (campo) campo.value = dados[id];
       });
 
-      document.getElementById('add-btn').style.display = 'none';
-      document.getElementById('update-btn').style.display = 'inline-block';
+      addBtn.style.display = 'inline-block';
+      updateBtn.style.display = 'inline-block';
+      updateBtn.classList.add('active-btn');
     }
+  } else {
+    updateBtn.style.display = 'inline-block';
+    updateBtn.classList.remove('active-btn');
   }
 
   // Botão Cadastrar
-  document.getElementById('add-btn').addEventListener('click', () => {
+  addBtn.addEventListener('click', () => {
     const campos = [
       'codigo', 'nome', 'email', 'cpf', 'celular', 'fone',
       'data', 'endereco', 'bairro', 'cep', 'cidade', 'uf'
@@ -106,10 +113,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     alert('Cadastro realizado com sucesso!');
     limparCampos();
+    updateBtn.classList.remove('active-btn');
   });
 
   // Botão Atualizar
-  document.getElementById('update-btn').addEventListener('click', () => {
+  updateBtn.addEventListener('click', () => {
     const campos = [
       'codigo', 'nome', 'email', 'cpf', 'celular', 'fone',
       'data', 'endereco', 'bairro', 'cep', 'cidade', 'uf'
@@ -129,8 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.removeItem('registroEditando');
       alert('Cadastro atualizado com sucesso!');
       limparCampos();
-      document.getElementById('update-btn').style.display = 'none';
-      document.getElementById('add-btn').style.display = 'inline-block';
+      updateBtn.classList.remove('active-btn');
     } else {
       alert('Erro ao atualizar registro.');
     }
