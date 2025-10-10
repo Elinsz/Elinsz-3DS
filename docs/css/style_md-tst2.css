@@ -391,7 +391,7 @@
 
   section {
     padding: 5px;
-    height: 99vh;
+    height: 100vh;
     /*margin-left: 60px;*/
     background-color: #ffffff;
     transition: margin-left 0.6s ease;
