@@ -5,6 +5,7 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f9f9f9;
   overflow: hidden;
+  font-size: clamp(13px, 1.5vw, 16px);
 }
 
 /* Cabeçalho fixo */
@@ -16,7 +17,7 @@ body {
   height: 60px;
   background-color: #721818;
   color: #ffffff;
-  font-size: 1.8em;
+  font-size: clamp(1.4em, 2vw, 1.8em);
   text-align: center;
   line-height: 60px;
   z-index: 1000;
@@ -49,13 +50,12 @@ body {
 
 .tab-link {
   display: inline-block;
-  padding: 2px 12px;
-  height: 22px;
-  line-height: 22px;
+  padding: clamp(2px, 0.5vw, 6px) clamp(10px, 1vw, 12px);
+  height: auto;
   border-radius: 6px;
   background-color: #d6d7f3;
   color: #333333;
-  font-size: 14px;
+  font-size: clamp(12px, 1.4vw, 14px);
   text-decoration: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
@@ -74,7 +74,7 @@ body {
 /* Área do formulário */
 #form-tab {
   position: absolute;
-  top: 100px; /* 60px nav + 40px sub-nav */
+  top: 100px;
   left: 0;
   width: 100%;
   height: calc(100vh - 100px);
@@ -106,11 +106,18 @@ body {
   flex-direction: column;
 }
 
+label {
+  font-size: clamp(11px, 1.3vw, 13px);
+  margin-bottom: 4px;
+}
+
 .input-text {
-  padding: 6px 10px;
-  font-size: 14px;
+  font-size: clamp(12px, 1.5vw, 14px);
+  padding: clamp(4px, 1vw, 6px) clamp(8px, 2vw, 10px);
   border: 1px solid #ccc;
   border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Campo com ícone de calendário */
@@ -122,6 +129,7 @@ body {
 .calendar-btn {
   margin-left: 6px;
   cursor: pointer;
+  font-size: 1.2em;
 }
 
 /* Botões de ação */
@@ -136,8 +144,8 @@ body {
 }
 
 .input-btn {
-  padding: 8px 16px;
-  font-size: 14px;
+  font-size: clamp(12px, 1.5vw, 14px);
+  padding: clamp(6px, 1vw, 8px) clamp(12px, 2vw, 16px);
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -166,55 +174,32 @@ body {
   opacity: 0.9;
 }
 
-
-/* Escala progressiva para telas menores */
-@media screen and (max-width: 1024px) {
-  body {
-    font-size: 15px;
-  }
-
-  .input-text {
-    font-size: 13px;
-    padding: 5px 8px;
-  }
-
-  label {
-    font-size: 13px;
-  }
-
-  .tab-link {
-    font-size: 13px;
-    padding: 2px 10px;
-  }
-
-  #nav {
-    font-size: 1.6em;
-  }
-}
-
-
-/* Responsividade */
+/* Responsividade adicional */
 @media screen and (max-width: 368px) {
-  body {
-    font-size: 14px;
-  }
-
-  .input-text {
-    font-size: 12px;
-    padding: 4px 6px;
-  }
-
-  label {
-    font-size: 12px;
+  .tab-menu {
+    flex-direction: column;
   }
 
   .tab-link {
-    font-size: 12px;
-    padding: 2px 8px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 6px;
   }
 
-  #nav {
-    font-size: 1.4em;
+  .input-group {
+    flex-direction: column;
+  }
+
+  .col-esquerda,
+  .col-direita {
+    width: 100%;
+  }
+
+  #form-tab {
+    padding: 10px;
+  }
+
+  .button-row {
+    flex-direction: column;
   }
 }
-
