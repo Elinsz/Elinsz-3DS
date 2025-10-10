@@ -1,27 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Exemplo de dados simulados
-  const registros = [
-    {
-      codigo: '001',
-      data: '2025-10-06',
-      nome: 'João Silva',
-      cpf: '123.456.789-00',
-      endereco: 'Rua A',
-      bairro: 'Centro',
-      cidade: 'Pinhais',
-      uf: 'PR',
-      cep: '83320-000',
-      email: 'joao@email.com',
-      celular: '(41) 99999-9999',
-      fone: '(41) 98888-8888'
-    }
-  ];
+  // Gerenciar abas ativas
+  const links = document.querySelectorAll('.tab-link');
+  const currentPage = window.location.pathname.split('/').pop();
 
+  links.forEach(link => {
+    const href = link.getAttribute('href').split('/').pop();
+    link.classList.toggle('active', href === currentPage);
+
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      window.location.href = link.getAttribute('href');
+    });
+  });
+
+  // Carregar registros
+  const registros = JSON.parse(localStorage.getItem('registros')) || [];
   const tbody = document.querySelector('#myTable tbody');
 
   registros.forEach((reg, index) => {
     const row = tbody.insertRow();
     row.id = `row-${index + 1}`;
+
     row.insertCell(0).textContent = index + 1;
     row.insertCell(1).textContent = reg.codigo;
     row.insertCell(2).textContent = reg.data;
@@ -35,11 +34,20 @@ document.addEventListener('DOMContentLoaded', () => {
     row.insertCell(10).textContent = reg.email;
     row.insertCell(11).textContent = reg.celular;
     row.insertCell(12).textContent = reg.fone;
-    row.insertCell(13).innerHTML = `
+
+    const actionCell = row.insertCell(13);
+    actionCell.innerHTML = `
       <div class="action-icons">
         <button class="remove-btn" title="Editar">✏️</button>
-        <button class="remove-btn" title="Excluir" onclick="this.closest('tr').remove()">🗑️</button>
+        <button class="remove-btn" title="Excluir">🗑️</button>
       </div>
     `;
+
+    // Botão excluir
+    actionCell.querySelector('[title="Excluir"]').addEventListener('click', () => {
+      registros.splice(index, 1);
+      localStorage.setItem('registros', JSON.stringify(registros));
+      row.remove();
+    });
   });
 });

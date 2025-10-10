@@ -1,46 +1,54 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // CPF/CNPJ
-  document.getElementById('cpf').addEventListener('input', function () {
-    let v = this.value.replace(/\D/g, '');
-    if (v.length <= 11) {
-      this.value = v.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
-    } else {
-      this.value = v.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, '$1.$2.$3/$4-$5');
-    }
+  // Máscara CPF/CNPJ
+  const cpfInput = document.getElementById('cpf');
+  cpfInput.addEventListener('input', () => {
+    let v = cpfInput.value.replace(/\D/g, '');
+    cpfInput.value = v.length <= 11
+      ? v.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4')
+      : v.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, '$1.$2.$3/$4-$5');
   });
 
-  // CEP
-  document.getElementById('cep').addEventListener('input', function () {
-    let v = this.value.replace(/\D/g, '');
-    this.value = v.replace(/(\d{5})(\d{3})/, '$1-$2');
+  // Máscara CEP
+  const cepInput = document.getElementById('cep');
+  cepInput.addEventListener('input', () => {
+    let v = cepInput.value.replace(/\D/g, '');
+    cepInput.value = v.replace(/(\d{5})(\d{3})/, '$1-$2');
   });
 
-  // Celular
-  document.getElementById('celular').addEventListener('input', function () {
-    let v = this.value.replace(/\D/g, '');
-    this.value = v.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+  // Máscara Celular
+  const celularInput = document.getElementById('celular');
+  celularInput.addEventListener('input', () => {
+    let v = celularInput.value.replace(/\D/g, '');
+    celularInput.value = v.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
   });
 
-  // Fone fixo
-  document.getElementById('fone').addEventListener('input', function () {
-    let v = this.value.replace(/\D/g, '');
-    this.value = v.replace(/(\d{2})(\d{4})(\d{4})/, '($1) $2-$3');
+  // Máscara Telefone fixo
+  const foneInput = document.getElementById('fone');
+  foneInput.addEventListener('input', () => {
+    let v = foneInput.value.replace(/\D/g, '');
+    foneInput.value = v.replace(/(\d{2})(\d{4})(\d{4})/, '($1) $2-$3');
   });
 
-  // Validação de data dd/mm/aaaa
-  document.getElementById('data').addEventListener('blur', function () {
+  // Validação de data
+  const dataInput = document.getElementById('data');
+  dataInput.addEventListener('input', () => {
+    let v = dataInput.value.replace(/\D/g, '');
+    if (v.length >= 2) v = v.replace(/^(\d{2})/, '$1/');
+    if (v.length >= 5) v = v.replace(/^(\d{2})\/(\d{2})/, '$1/$2/');
+    dataInput.value = v;
+  });
+
+  dataInput.addEventListener('blur', () => {
     const regex = /^([0-2]\d|3[01])\/(0\d|1[0-2])\/\d{4}$/;
-    if (this.value && !regex.test(this.value)) {
+    if (dataInput.value && !regex.test(dataInput.value)) {
       alert('Data inválida. Use o formato dd/mm/aaaa.');
-      this.value = '';
+      dataInput.value = '';
     }
   });
 
-  // Abrir calendário invisível
-  function abrirCalendario(id) {
+  // Calendário flutuante
+  window.abrirCalendario = function (id) {
     const input = document.getElementById(id);
-
-    // Cria seletor de data visível
     const picker = document.createElement('input');
     picker.type = 'date';
     picker.style.position = 'absolute';
@@ -49,14 +57,12 @@ document.addEventListener('DOMContentLoaded', () => {
     picker.style.top = input.getBoundingClientRect().bottom + window.scrollY + 'px';
     picker.style.fontSize = '14px';
 
-    // Quando o usuário escolhe a data
     picker.onchange = () => {
       const [ano, mes, dia] = picker.value.split('-');
       input.value = `${dia}/${mes}/${ano}`;
       document.body.removeChild(picker);
     };
 
-    // Remove se perder o foco
     picker.onblur = () => {
       if (document.body.contains(picker)) {
         document.body.removeChild(picker);
@@ -65,13 +71,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.body.appendChild(picker);
     picker.focus();
-  }
+  };
 
   // Botão Cadastrar
-  document.getElementById('add-btn').addEventListener('click', () => {
-    const celular = document.getElementById('celular').value;
-    const fone = document.getElementById('fone').value;
-    const data = document.getElementById('data').value;
+  const addBtn = document.getElementById('add-btn');
+  addBtn.addEventListener('click', () => {
+    const celular = celularInput.value;
+    const fone = foneInput.value;
+    const data = dataInput.value;
 
     if (celular.length < 15 || fone.length < 14) {
       alert('Preencha os campos de telefone corretamente.');
@@ -84,16 +91,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     alert('Cadastro realizado com sucesso!');
-    document.querySelectorAll('.input-text').forEach(input => input.value = '');
-    document.getElementById('add-btn').classList.add('active-btn');
+    limparCampos();
+    addBtn.classList.add('active-btn');
     document.getElementById('update-btn').classList.remove('active-btn');
   });
 
   // Botão Atualizar
-  document.getElementById('update-btn').addEventListener('click', () => {
+  const updateBtn = document.getElementById('update-btn');
+  updateBtn.addEventListener('click', () => {
     alert('Cadastro atualizado com sucesso!');
-    document.querySelectorAll('.input-text').forEach(input => input.value = '');
-    document.getElementById('update-btn').classList.add('active-btn');
-    document.getElementById('add-btn').classList.remove('active-btn');
+    limparCampos();
+    updateBtn.classList.add('active-btn');
+    addBtn.classList.remove('active-btn');
   });
+
+  // Função para limpar os campos
+  function limparCampos() {
+    document.querySelectorAll('.input-text').forEach(input => input.value = '');
+  }
 });
