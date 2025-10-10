@@ -66,6 +66,16 @@ body {
   border: none;
 }
 
+.tab-clear {
+  display: flex;
+  gap: 10px;
+}
+
+.tab-clear div {
+  display: inline-block;
+  align-items: right;
+}
+
 .tab-link:hover {
   background-color: #aeb0f3;
 }
