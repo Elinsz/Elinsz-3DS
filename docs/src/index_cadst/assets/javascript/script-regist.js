@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Carregar registros
+  // Carregar registros do localStorage
   const registros = JSON.parse(localStorage.getItem('registros')) || [];
   const tbody = document.querySelector('#myTable tbody');
 

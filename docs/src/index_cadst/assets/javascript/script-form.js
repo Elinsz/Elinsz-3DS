@@ -1,40 +1,43 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Máscara CPF/CNPJ
-  const cpfInput = document.getElementById('cpf');
-  cpfInput.addEventListener('input', () => {
-    let v = cpfInput.value.replace(/\D/g, '');
-    cpfInput.value = v.length <= 11
+  // Máscaras de entrada
+  const formatInput = (id, pattern) => {
+    const input = document.getElementById(id);
+    input.addEventListener('input', () => {
+      let v = input.value.replace(/\D/g, '');
+      input.value = v.replace(pattern.regex, pattern.format);
+    });
+  };
+
+  formatInput('cpf', {
+    regex: v => v.length <= 11
+      ? /(\d{3})(\d{3})(\d{3})(\d{2})/
+      : /(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/,
+    format: v => v.length <= 11
       ? v.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4')
-      : v.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, '$1.$2.$3/$4-$5');
+      : v.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, '$1.$2.$3/$4-$5')
   });
 
-  // Máscara CEP
-  const cepInput = document.getElementById('cep');
-  cepInput.addEventListener('input', () => {
-    let v = cepInput.value.replace(/\D/g, '');
-    cepInput.value = v.replace(/(\d{5})(\d{3})/, '$1-$2');
+  formatInput('cep', {
+    regex: /(\d{5})(\d{3})/,
+    format: '$1-$2'
   });
 
-  // Máscara Celular
-  const celularInput = document.getElementById('celular');
-  celularInput.addEventListener('input', () => {
-    let v = celularInput.value.replace(/\D/g, '');
-    celularInput.value = v.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+  formatInput('celular', {
+    regex: /(\d{2})(\d{5})(\d{4})/,
+    format: '($1) $2-$3'
   });
 
-  // Máscara Telefone fixo
-  const foneInput = document.getElementById('fone');
-  foneInput.addEventListener('input', () => {
-    let v = foneInput.value.replace(/\D/g, '');
-    foneInput.value = v.replace(/(\d{2})(\d{4})(\d{4})/, '($1) $2-$3');
+  formatInput('fone', {
+    regex: /(\d{2})(\d{4})(\d{4})/,
+    format: '($1) $2-$3'
   });
 
-  // Validação de data
+  // Data com barra automática
   const dataInput = document.getElementById('data');
   dataInput.addEventListener('input', () => {
     let v = dataInput.value.replace(/\D/g, '');
     if (v.length >= 2) v = v.replace(/^(\d{2})/, '$1/');
-    if (v.length >= 5) v = v.replace(/^(\d{2})\/(\d{2})/, '$1/$2/');
+    if (v.length >= 4) v = v.replace(/^(\d{2})\/(\d{2})/, '$1/$2/');
     dataInput.value = v;
   });
 
@@ -74,38 +77,40 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // Botão Cadastrar
-  const addBtn = document.getElementById('add-btn');
-  addBtn.addEventListener('click', () => {
-    const celular = celularInput.value;
-    const fone = foneInput.value;
-    const data = dataInput.value;
+  document.getElementById('add-btn').addEventListener('click', () => {
+    const campos = [
+      'codigo', 'nome', 'email', 'cpf', 'celular', 'fone',
+      'data', 'endereco', 'bairro', 'cep', 'cidade', 'uf'
+    ];
 
-    if (celular.length < 15 || fone.length < 14) {
-      alert('Preencha os campos de telefone corretamente.');
+    const dados = {};
+    let valido = true;
+
+    campos.forEach(id => {
+      const valor = document.getElementById(id).value.trim();
+      dados[id] = valor;
+      if (!valor) valido = false;
+    });
+
+    if (!valido) {
+      alert('Preencha todos os campos corretamente.');
       return;
     }
 
-    if (data.length !== 10) {
-      alert('Preencha a data corretamente.');
-      return;
-    }
+    const registros = JSON.parse(localStorage.getItem('registros')) || [];
+    registros.push(dados);
+    localStorage.setItem('registros', JSON.stringify(registros));
 
     alert('Cadastro realizado com sucesso!');
     limparCampos();
-    addBtn.classList.add('active-btn');
-    document.getElementById('update-btn').classList.remove('active-btn');
   });
 
   // Botão Atualizar
-  const updateBtn = document.getElementById('update-btn');
-  updateBtn.addEventListener('click', () => {
+  document.getElementById('update-btn').addEventListener('click', () => {
     alert('Cadastro atualizado com sucesso!');
     limparCampos();
-    updateBtn.classList.add('active-btn');
-    addBtn.classList.remove('active-btn');
   });
 
-  // Função para limpar os campos
   function limparCampos() {
     document.querySelectorAll('.input-text').forEach(input => input.value = '');
   }
