@@ -72,7 +72,7 @@ body {
 }
 
 .tab-clear div {
-  display: inline-block;
+  display: flex;
   align-items: right;
 }
 
