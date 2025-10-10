@@ -25,6 +25,7 @@
   }
 
 
+
   /*
     Fontes
   */
@@ -389,8 +390,7 @@
   }
 
   section {
-    padding: 3px;
-    width: 100%;
+    padding: 5px;
     height: 100vh;
     /*margin-left: 60px;*/
     background-color: #ffffff;
