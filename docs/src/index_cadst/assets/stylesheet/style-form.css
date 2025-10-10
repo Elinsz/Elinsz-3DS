@@ -89,6 +89,17 @@ body {
   flex-wrap: wrap;
 }
 
+/* Estilo do contêiner do formulário */
+#input-data {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  max-width: 960px;
+  margin: 0 auto;
+}
+
 /* Colunas esquerda e direita */
 .col-esquerda,
 .col-direita {
@@ -202,6 +213,7 @@ label {
   .col-esquerda,
   .col-direita {
     width: 100%;
+
   }
 
   #form-tab {
