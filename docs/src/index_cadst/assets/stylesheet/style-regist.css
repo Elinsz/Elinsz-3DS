@@ -1,10 +1,15 @@
 /* Reset básico */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
   background-color: #f9f9f9;
   overflow: hidden;
+  font-size: 14px;
 }
 
 /* Cabeçalho fixo */
@@ -16,9 +21,9 @@ body {
   height: 50px;
   background-color: #721818;
   color: #ffffff;
-  font-size: 1.8em;
+  font-size: 18px;
   text-align: center;
-  line-height: 60px;
+  line-height: 50px;
   z-index: 1000;
 }
 
@@ -33,25 +38,24 @@ body {
   display: flex;
   align-items: center;
   padding: 0 20px;
-  box-sizing: border-box;
   z-index: 999;
 }
 
 /* Menu de abas */
 .tab-menu {
   display: flex;
-  gap: 10px;
 }
 
 .tab-menu div {
   display: inline-block;
+  margin-right: 10px;
 }
 
 .tab-link {
   display: inline-block;
-  padding: 2px 12px;
-  height: 22px;
-  line-height: 22px;
+  padding: 6px 12px;
+  height: 32px;
+  line-height: 20px;
   border-radius: 6px;
   background-color: #d6d7f3;
   color: #333333;
@@ -60,6 +64,7 @@ body {
   cursor: pointer;
   transition: background-color 0.3s ease;
   border: none;
+  vertical-align: middle;
 }
 
 .tab-link:hover {
@@ -74,13 +79,12 @@ body {
 /* Área da tabela */
 #table-tab {
   position: absolute;
-  top: 100px; /* 60px nav + 40px sub-nav */
+  top: 90px;
   left: 0;
   width: 100%;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 90px);
   overflow-y: auto;
   padding: 20px;
-  box-sizing: border-box;
 }
 
 /* Tabela */
@@ -102,9 +106,11 @@ thead {
 
 th, td {
   padding: 8px 12px;
-  height: 20px;
+  height: 32px;
+  line-height: 20px;
   border: 1px solid #ccc;
   text-align: left;
+  vertical-align: middle;
 }
 
 th {
@@ -118,10 +124,13 @@ tbody tr:hover {
 /* Ícones de ação */
 .action-icons {
   display: flex;
-  gap: 8px;
   justify-content: flex-start;
   align-items: center;
   white-space: nowrap;
+}
+
+.action-icons > * {
+  margin-right: 8px;
 }
 
 .remove-btn {
@@ -129,9 +138,12 @@ tbody tr:hover {
   cursor: pointer;
   background: none;
   border: none;
-  padding: 4px;
+  padding: 6px 8px;
+  min-height: 28px;
+  line-height: 20px;
   border-radius: 4px;
   transition: background-color 0.2s ease;
+  vertical-align: middle;
 }
 
 .remove-btn:hover {
@@ -168,10 +180,16 @@ tbody tr:hover {
 
   th, td {
     padding: 6px 8px;
+    height: 28px;
+    line-height: 18px;
   }
 
   .action-icons {
     flex-direction: row;
     justify-content: center;
+  }
+
+  .action-icons > * {
+    margin-right: 6px;
   }
 }
