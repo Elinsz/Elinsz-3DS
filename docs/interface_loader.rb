@@ -23,32 +23,6 @@ module EIS_Extensions
         File.join(File.dirname(__FILE__), "js", "interface.js")
       end
 
-
-
-      # def self.js_path
-      #   File.join(File.dirname(__FILE__), "js", "interface.js")
-      # end
-
-      # def self.js_path
-      #   File.join(File.dirname(__FILE__), "js", "interface.js")
-      # end
-
-      # def self.js_path
-      #   File.join(File.dirname(__FILE__), "js", "interface.js")
-      # end
-
-      # def self.js_path
-      #   File.join(File.dirname(__FILE__), "js", "interface.js")
-      # end
-
-      # def self.js_path
-      #   File.join(File.dirname(__FILE__), "js", "interface.js")
-      # end
-
-      # def self.js_path
-      #   File.join(File.dirname(__FILE__), "js", "interface.js")
-      # end
-
     end
   end
 end
