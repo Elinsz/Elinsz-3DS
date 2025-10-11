@@ -8,7 +8,7 @@ body {
   font-size: clamp(13px, 1.5vw, 16px);
 }
 
-.side-bar{
+.side-bar {
   height: 90vh;
   width: 100%;
 }
@@ -46,11 +46,11 @@ body {
 /* Menu de abas */
 .tab-menu {
   display: flex;
-  gap: 10px;
 }
 
 .tab-menu div {
   display: inline-block;
+  margin-right: 10px;
 }
 
 .tab-link {
@@ -78,10 +78,10 @@ body {
 /* Área do formulário */
 #form-tab {
   position: absolute;
-  top: 100px;
+  top: 90px;
   left: 0;
   width: 100%;
-  height: calc(100vh - 100px);
+  height: calc(100vh - 90px);
   overflow-y: auto;
   padding: 10px;
   box-sizing: border-box;
@@ -101,7 +101,6 @@ body {
 /* Container dos campos */
 .input-group {
   display: flex;
-  gap: 40px;
   flex-wrap: wrap;
 }
 
@@ -112,7 +111,11 @@ body {
   min-width: 300px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+}
+
+.col-esquerda > .form-field,
+.col-direita > .form-field {
+  margin-bottom: 16px;
 }
 
 /* Campo individual */
@@ -139,15 +142,17 @@ label {
   box-sizing: border-box;
   width: auto;
   max-width: 100%;
+  height: 28px;
+  line-height: 28px;
 }
 
 /* Largura proporcional por faixa de caracteres */
-.input-xs { width: 50px; }     /* até 2 caracteres */
-.input-sm { width: 100px; }    /* até 10 caracteres */
-.input-md { width: 160px; }    /* até 20 caracteres */
-.input-lg { width: 220px; }    /* até 30 caracteres */
-.input-xl { width: 280px; }    /* até 40+ caracteres */
-.input-xxl { width: 340px; }   /* até 60+ caracteres */
+.input-xs { width: 50px; }
+.input-sm { width: 100px; }
+.input-md { width: 160px; }
+.input-lg { width: 220px; }
+.input-xl { width: 280px; }
+.input-xxl { width: 340px; }
 
 /* Campo com ícone de calendário */
 .date-field .input-icon {
@@ -166,10 +171,13 @@ label {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  flex-wrap: wrap;
   margin-top: 30px;
   margin-bottom: 10px;
-  flex-wrap: wrap;
+}
+
+.button-row > .input-btn {
+  margin: 5px;
 }
 
 .input-btn {
