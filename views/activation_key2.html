@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Ativação</title>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js"></script>
+</head>
+<body>
+    <div id="content"></div>
+
+    <script>
+        async function loadTemplate() {
+            const response = await fetch("activation_key.handlebars");
+            const source = await response.text();
+            const template = Handlebars.compile(source);
+            const context = { message: "Digite sua chave de ativação:" };
+            document.getElementById("content").innerHTML = template(context);
+        }
+
+        loadTemplate();
+    </script>
+</body>
+</html>
