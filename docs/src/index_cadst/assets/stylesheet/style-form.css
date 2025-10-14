@@ -49,12 +49,12 @@ body {
 /* Menu de abas */
 .tab-menu {
   display: flex;
+  margin-left: 20px;
 }
 
 .tab-menu div {
   display: inline-block;
   margin-right: 10px;
-  margin-left: 10px;
 }
 
 .tab-link {
