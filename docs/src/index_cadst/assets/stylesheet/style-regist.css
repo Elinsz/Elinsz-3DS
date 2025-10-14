@@ -106,9 +106,10 @@ thead {
 }
 
 th, td {
-  padding: 8px 12px;
-  height: 28px;
-  line-height: 18px;
+  padding: 4px 6px;
+  /* padding: 8px 12px; */
+  height: 25px;
+  line-height: 15px;
   border: 1px solid #ccc;
   text-align: left;
   vertical-align: middle;
