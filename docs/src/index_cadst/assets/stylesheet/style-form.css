@@ -137,10 +137,10 @@ label {
 
 /* Input base */
 .input-text {
-  font-size: 14px;
+  font-size: 13px;
   padding: 6px 8px;
-  height: 32px;
-  line-height: 20px;
+  height: 30px;
+  line-height: 18px;
   vertical-align: middle;
   border: 1px solid #ccc;
   border-radius: 4px;
