@@ -81,7 +81,7 @@ body {
 #table-tab {
   position: absolute;
   top: 90px;
-  left: 0;
+  left: 1px;
   width: 100%;
   height: calc(100vh - 90px);
   overflow-y: auto;
