@@ -44,6 +44,7 @@ body {
 /* Menu de abas */
 .tab-menu {
   display: flex;
+  margin-left: 20px;
 }
 
 .tab-menu div {
